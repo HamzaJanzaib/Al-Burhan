@@ -88,7 +88,7 @@ function ContactPageContent() {
   };
 
   return (
-    <div className="md:h-[calc(100vh-theme(spacing.24))] min-h-screen bg-background flex flex-col md:flex-row overflow-hidden md:pt-0">
+    <div className="md:h-[calc(100vh-theme(spacing.24))] min-h-screen bg-background flex flex-col md:flex-row overflow-hidden">
       {/* Left Visual Panel */}
       <div className="hidden lg:flex lg:w-5/12 relative bg-primary text-white p-12 flex-col justify-between overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -213,21 +213,42 @@ function ContactPageContent() {
               <motion.button
                 type="submit"
                 disabled={isSubmitting}
-                whileHover={{ scale: 1.01 }}
-                whileTap={{ scale: 0.99 }}
-                className="w-full py-5 bg-primary hover:bg-black text-white font-black text-lg rounded-2xl shadow-2xl shadow-primary/20 transition-all flex items-center justify-center gap-3 mt-8 cursor-pointer disabled:opacity-75 disabled:cursor-not-allowed group relative overflow-hidden"
+                whileHover={{ 
+                  scale: 1.02,
+                  boxShadow: "0 25px 50px -12px rgba(6, 78, 59, 0.4)" 
+                }}
+                whileTap={{ scale: 0.98 }}
+                animate={!isSubmitting ? { 
+                  y: [0, -3, 0],
+                  transition: { 
+                    duration: 4, 
+                    repeat: Infinity, 
+                    ease: "easeInOut" 
+                  } 
+                } : {}}
+                className="w-full py-5 bg-linear-to-r from-primary via-primary/80  to-primary text-white font-black text-xl rounded-2xl shadow-[0_20px_40px_-15px_rgba(0,0,0,0.3)] transition-all flex items-center justify-center gap-3 mt-8 cursor-pointer disabled:opacity-75 disabled:cursor-not-allowed group relative overflow-hidden ring-4 ring-primary/5"
               >
-                {isSubmitting ? (
-                  <>
-                    <Loader2 className="animate-spin" />
-                    <span>{t("contact_page.form.sending") || "Sending..."}</span>
-                  </>
-                ) : (
-                  <>
-                    <span>{t("contact_page.form.button") || "Send Message"}</span>
-                    <Send size={20} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                  </>
-                )}
+                {/* Shine effect */}
+                <div className="absolute inset-0 z-0 pointer-events-none">
+                  <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/10 to-transparent w-1/2 h-full animate-[shine_3s_infinite]" />
+                </div>
+
+                <div className="relative z-10 flex items-center gap-3">
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 className="animate-spin" />
+                      <span>{t("contact_page.form.sending") || "Sending..."}</span>
+                    </>
+                  ) : (
+                    <>
+                      <span className="tracking-tight">{t("contact_page.form.button") || "Send Message"}</span>
+                      <Send 
+                        size={22} 
+                        className="group-hover:translate-x-2 group-hover:-translate-y-2 group-hover:scale-110 transition-all duration-300 ease-out text-secondary" 
+                      />
+                    </>
+                  )}
+                </div>
               </motion.button>
             </form>
           </motion.div>

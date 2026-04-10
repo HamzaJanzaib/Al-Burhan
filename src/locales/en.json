@@ -138,7 +138,9 @@
         "form": {
             "title": "Send a Message",
             "success": "Message sent successfully!",
-            "error": "Failed to send message."
+            "error": "Failed to send message.",
+            "button": "Send Message",
+            "sending": "Sending..."
         }
     }
 }
