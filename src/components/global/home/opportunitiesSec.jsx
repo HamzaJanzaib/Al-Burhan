@@ -111,17 +111,25 @@ const AboutStatsSection = () => {
                   repeat: Infinity,
                   ease: "easeInOut",
                 }}
-                className="absolute bottom-8 left-8 bg-background/95 backdrop-blur-md p-5 rounded-3xl shadow-xl border border-primary/10 flex items-center gap-4"
+                className="absolute bottom-8 left-8 bg-background/95 backdrop-blur-md p-4 rounded-full shadow-xl border border-primary/10 flex items-center divide-x divide-border cursor-default hover:scale-105 transition-transform"
               >
-                <div className="w-12 h-12 bg-secondary/20 rounded-2xl flex items-center justify-center text-secondary">
-                  <Award size={24} />
+                <div className="flex -space-x-3 pr-4 pl-1">
+                  <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200" alt="avatar" className="w-10 h-10 rounded-full border-2 border-background hover:-translate-y-1 transition-transform relative z-10 hover:z-50 object-cover shadow-sm" />
+                  <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=200" alt="avatar" className="w-10 h-10 rounded-full border-2 border-background hover:-translate-y-1 transition-transform relative z-20 hover:z-50 object-cover shadow-sm" />
+                  <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=200&h=200&auto=format&fit=crop" alt="avatar" className="w-10 h-10 rounded-full border-2 border-background hover:-translate-y-1 transition-transform relative z-30 hover:z-50 object-cover shadow-sm" />
+                  <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="avatar" className="w-10 h-10 rounded-full border-2 border-background hover:-translate-y-1 transition-transform relative z-40 hover:z-50 object-cover shadow-sm" />
                 </div>
-                <div>
-                  <p className="text-[10px] font-black text-secondary tracking-widest uppercase">
-                    Verified
-                  </p>
-                  <p className="text-sm font-bold text-primary">
-                    Certified Tutors
+                <div className="pl-4 pr-3">
+                  <div className="flex items-center gap-0.5">
+                    {[...Array(5)].map((_, i) => (
+                      <svg key={i} xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" className="fill-secondary text-secondary" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/>
+                      </svg>
+                    ))}
+                    <p className="text-foreground font-bold text-sm ml-1.5">5.0</p>
+                  </div>
+                  <p className="text-xs text-muted-foreground mt-0.5 tracking-wide">
+                    Trusted by <span className="font-bold text-primary">100,000+</span> users
                   </p>
                 </div>
               </motion.div>

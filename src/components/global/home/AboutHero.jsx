@@ -98,7 +98,7 @@ const HeroSection = () => {
           {/* Stats/Social Proof */}
           <motion.div
             variants={fadeInUp}
-            className="mt-16 flex items-center gap-8"
+            className="mt-16 select-none flex items-center gap-8"
           >
             <div>
               <h3 className="text-4xl font-bold text-slate-900">5k+</h3>
@@ -106,27 +106,51 @@ const HeroSection = () => {
                 Active Students
               </p>
             </div>
-            <div className="h-10 w-px bg-slate-200" />
-            <div className="flex items-center gap-3 bg-primary/5 p-2 pr-6 rounded-full">
-              <div className="flex -space-x-3">
-                {[1, 2, 3].map((i) => (
-                  <div
+            <div className="h-8 w-px bg-border" />
+            <motion.div 
+              whileHover={{ y: -5, boxShadow: "0 25px 50px -12px rgba(13,92,92,0.15)" }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+              className="flex items-center divide-x divide-border bg-background p-2.5 pr-6 rounded-[30px] border border-primary/10 shadow-lg cursor-pointer group"
+            >
+              <div className="flex -space-x-3 pr-4 pl-1">
+                {[
+                  "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200",
+                  "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=200",
+                  "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=200&h=200&auto=format&fit=crop",
+                  "https://randomuser.me/api/portraits/men/75.jpg"
+                ].map((src, i) => (
+                  <motion.img 
                     key={i}
-                    className="w-10 h-10 rounded-full border-2 border-white bg-slate-300 overflow-hidden relative"
-                  >
-                    <Image
-                      src={`https://i.pravatar.cc/100?img=${i + 10}`}
-                      alt="user"
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
+                    src={src} 
+                    alt="avatar" 
+                    whileHover={{ y: -8, scale: 1.15, zIndex: 100 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                    style={{ position: 'relative', zIndex: 10 + i }}
+                    className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border-2 border-background object-cover shadow-sm" 
+                  />
                 ))}
               </div>
-              <span className="text-sm font-bold text-primary">
-                Certified Tutors
-              </span>
-            </div>
+              <div className="pl-4">
+                <div className="flex items-center gap-0.5 group-hover:gap-1 transition-all duration-300">
+                  {[...Array(5)].map((_, i) => (
+                    <motion.svg 
+                      key={i} 
+                      whileHover={{ scale: 1.3, rotate: 18 }}
+                      transition={{ type: "spring", stiffness: 300, damping: 10 }}
+                      xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" 
+                      className="fill-secondary text-secondary drop-shadow-sm cursor-crosshair" 
+                      stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
+                    >
+                      <path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/>
+                    </motion.svg>
+                  ))}
+                  <p className="text-foreground font-black text-sm ml-1.5 group-hover:text-primary transition-colors duration-300">3.9</p>
+                </div>
+                <p className="text-sm text-muted-foreground mt-0.5">
+                  Trusted by <span className="font-bold text-primary group-hover:text-secondary transition-colors duration-300">100,000+</span> users
+                </p>
+              </div>
+            </motion.div>
           </motion.div>
         </motion.div>
 
