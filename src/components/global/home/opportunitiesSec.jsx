@@ -75,8 +75,8 @@ const AboutStatsSection = () => {
       className="relative w-full bg-background py-24 px-6 lg:px-16 overflow-hidden"
     >
       {/* Decorative Glow Backgrounds */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] -z-0" />
-      <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-secondary/10 rounded-full blur-[100px] -z-0" />
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] z-0" />
+      <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-secondary/10 rounded-full blur-[100px] z-0" />
 
       <motion.div
         initial="hidden"
@@ -94,7 +94,7 @@ const AboutStatsSection = () => {
           >
             {/* Interactive Frame */}
             <div className="absolute -top-6 -right-6 w-full h-full border-2 border-primary/20 rounded-[40px] -z-10 group-hover:translate-x-3 group-hover:-translate-y-3 transition-transform duration-700" />
-            <div className="relative aspect-[4/5] md:aspect-square overflow-hidden rounded-[40px] shadow-2xl border border-white">
+            <div className="relative aspect-4/5 md:aspect-square overflow-hidden rounded-[40px] shadow-2xl border border-white">
               <Image
                 src="/al-burhan/Logo/WEBP/al-burhan-full.webp"
                 alt="Student Reciting"
@@ -200,7 +200,7 @@ const AboutStatsSection = () => {
                   transition={{ delay: 0.5 + idx * 0.1 }}
                   className="flex items-center gap-3 text-slate-700 font-bold"
                 >
-                  <div className="flex-shrink-0 w-6 h-6 bg-secondary/20 rounded-full flex items-center justify-center">
+                  <div className="shrink-0 w-6 h-6 bg-secondary/20 rounded-full flex items-center justify-center">
                     <CheckCircle size={14} className="text-secondary" />
                   </div>
                   {item}

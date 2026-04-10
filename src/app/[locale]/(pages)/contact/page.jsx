@@ -88,7 +88,7 @@ function ContactPageContent() {
   };
 
   return (
-    <div className="md:h-[calc(100vh-theme(spacing.24))] min-h-screen bg-background flex flex-col md:flex-row overflow-hidden">
+    <div className="md:h-[calc(100vh-(--spacing(24)))] min-h-screen bg-background flex flex-col md:flex-row overflow-hidden">
       {/* Left Visual Panel */}
       <div className="hidden lg:flex lg:w-5/12 relative bg-primary text-white p-12 flex-col justify-between overflow-hidden">
         <div className="absolute inset-0 z-0">

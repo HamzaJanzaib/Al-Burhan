@@ -31,7 +31,7 @@ function EnrollmentPageContent() {
   }
 
   return (
-    <div className="md:h-[calc(100vh-theme(spacing.24))] min-h-screen bg-background flex flex-col md:flex-row overflow-hidden">
+    <div className="md:h-[calc(100vh-(--spacing(24)))] min-h-screen bg-background flex flex-col md:flex-row overflow-hidden">
       <BookingVisualPanel t={t} />
       <BookingForm
         t={t}

@@ -45,7 +45,7 @@ const FooterBrand = () => {
       >
         <div className="relative flex items-center justify-center">
           {/* Soft Glow Behind Circle */}
-          <div className="absolute w-20 h-20 bg-(--color-accent)/25 rounded-full blur-xl animate-pulse-smooth"></div>
+          <div className="absolute w-20 h-20 bg-accent/25 rounded-full blur-xl animate-pulse-smooth"></div>
 
           {/* Logo Container */}
           <div className="relative w-40 rounded-full h-40 flex items-center justify-center animate-heartbeat">

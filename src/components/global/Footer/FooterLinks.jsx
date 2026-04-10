@@ -20,7 +20,7 @@ const FooterLinks = () => {
                 href={`/${item.toLowerCase().replace(/\s+/g, "-")}`}
                 className="group flex items-center space-x-2 text-gray-400 hover:text-(--color-accent) transition-all cursor-pointer"
               >
-                <span className="block w-0 group-hover:w-2 h-0.5 bg-[var(--color-accent)] transition-all duration-300"></span>
+                <span className="block w-0 group-hover:w-2 h-0.5 bg-(--color-accent) transition-all duration-300"></span>
                 <span>{item}</span>
               </Link>
             </li>

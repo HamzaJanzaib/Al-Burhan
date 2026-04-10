@@ -114,7 +114,7 @@ const DesktopNav = () => {
                               href={sub.href}
                               className="group flex items-start gap-4 p-3 rounded-xl hover:bg-primary/5 transition-all duration-300 cursor-pointer h-full"
                             >
-                              <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-gray-50 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                              <div className="shrink-0 w-10 h-10 rounded-lg bg-gray-50 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-300">
                                 {sub.icon || <Sparkles size={18} />}
                               </div>
                               <div className="flex-1">

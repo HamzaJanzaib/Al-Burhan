@@ -106,7 +106,7 @@ const HeroSection = () => {
                 Active Students
               </p>
             </div>
-            <div className="h-10 w-[1px] bg-slate-200" />
+            <div className="h-10 w-px bg-slate-200" />
             <div className="flex items-center gap-3 bg-primary/5 p-2 pr-6 rounded-full">
               <div className="flex -space-x-3">
                 {[1, 2, 3].map((i) => (
