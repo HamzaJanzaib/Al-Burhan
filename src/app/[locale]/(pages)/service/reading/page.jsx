@@ -106,15 +106,6 @@ export default function ReadingPage() {
           </div>
         </div>
       </section>
-
-      {/* CTA */}
-      <section className="px-6">
-         <div className="max-w-4xl mx-auto rounded-[40px] bg-linear-to-br from-secondary to-orange-400 p-12 text-center text-primary shadow-2xl">
-           <h2 className="text-3xl md:text-5xl font-black mb-6 italic">Master Quranic Fluency</h2>
-           <p className="text-primary/70 mb-10 max-w-lg mx-auto font-bold">Foundation is key. Join our reading mastering program and read like a pro.</p>
-           <Link href="/enroll" className="inline-block px-10 py-5 rounded-full bg-primary text-white font-black text-lg hover:scale-105 transition-all shadow-xl">Start Trial Now</Link>
-         </div>
-      </section>
     </div>
   );
 }

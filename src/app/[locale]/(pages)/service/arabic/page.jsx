@@ -106,15 +106,6 @@ export default function ArabicPage() {
           </div>
         </div>
       </section>
-
-      {/* CTA */}
-      <section className="px-6">
-         <div className="max-w-4xl mx-auto rounded-[40px] bg-linear-to-br from-[#0d5c5c] to-black p-12 text-center text-white shadow-2xl">
-           <h2 className="text-3xl md:text-5xl font-black mb-6 italic">Understand Every Word</h2>
-           <p className="text-white/70 mb-10 max-w-lg mx-auto font-medium">Stop relying on translations. Start your Arabic mastery journey with AL Burhan today.</p>
-           <Link href="/enroll" className="inline-block px-10 py-5 rounded-full bg-secondary text-primary font-black text-lg hover:scale-105 transition-all">Start Your First Lesson</Link>
-         </div>
-      </section>
     </div>
   );
 }

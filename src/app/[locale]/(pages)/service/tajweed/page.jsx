@@ -123,18 +123,6 @@ export default function TajweedPage() {
 
         </div>
       </section>
-
-      {/* Final CTA */}
-      <section className="px-6">
-         <div className="max-w-4xl mx-auto rounded-[40px] bg-linear-to-br from-primary to-[#052b2b] p-12 text-center text-white shadow-2xl">
-           <h2 className="text-3xl md:text-5xl font-black mb-6 italic">Unlock the Beauty of Quran</h2>
-           <p className="text-white/70 mb-10 max-w-lg mx-auto font-medium">Join our Tajweed Mastery program and transform your recitation from ordinary to extraordinary.</p>
-           <Link href="/enroll" className="inline-block px-10 py-5 rounded-full bg-secondary text-primary font-black text-lg hover:scale-105 transition-all">
-              Begin Your Journey
-           </Link>
-         </div>
-      </section>
-
     </div>
   );
 }

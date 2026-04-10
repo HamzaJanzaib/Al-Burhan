@@ -106,18 +106,6 @@ export default function KidsPage() {
           </div>
         </div>
       </section>
-
-      {/* CTA */}
-      <section className="px-6">
-         <div className="max-w-4xl mx-auto rounded-[40px] bg-linear-to-br from-secondary to-primary p-12 text-center text-white shadow-2xl">
-           <motion.div animate={{ rotate: [0, 5, -5, 0] }} transition={{ repeat: Infinity, duration: 4 }}>
-             <Star className="mx-auto text-white mb-6" size={48} />
-           </motion.div>
-           <h2 className="text-3xl md:text-5xl font-black mb-6 italic">Invest in Your Child's Akhirah</h2>
-           <p className="text-white/80 mb-10 max-w-lg mx-auto font-bold">Give your child the gift of the Holy Quran today. Our first 3 classes are completely free.</p>
-           <Link href="/enroll" className="inline-block px-10 py-5 rounded-full bg-white text-primary font-black text-lg hover:scale-105 transition-all shadow-xl">Enroll My Child</Link>
-         </div>
-      </section>
     </div>
   );
 }
