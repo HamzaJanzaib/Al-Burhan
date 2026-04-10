@@ -1,15 +1,20 @@
 "use client";
+
+import { useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "motion/react";
-import { ChevronDown, ChevronRight, MapPin } from "lucide-react";
+import { ChevronDown, ChevronRight, MapPin, Sparkles } from "lucide-react";
 import { useHeader } from "@/context/HeaderContext";
 import { useTranslation } from "react-i18next";
 import { useServices } from "@/context/ServicesContext";
 
 const DesktopNav = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const { activeDropdown, setActiveDropdown } = useHeader();
   const { gridServices } = useServices();
+  const [hoveredIndex, setHoveredIndex] = useState(null);
+
+  const isRTL = i18n.dir() === "rtl";
 
   const navItems = [
     { name: t("nav.home"), href: "/" },
@@ -21,6 +26,7 @@ const DesktopNav = () => {
         name: service.title,
         href: service.href,
         icon: service.icon,
+        description: service.description,
       })),
     },
     {
@@ -33,113 +39,120 @@ const DesktopNav = () => {
     { name: t("nav.contact"), href: "/contact" },
   ];
 
-  const dropdownVariants = {
-    hidden: { opacity: 0, y: -10, scale: 0.95 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      transition: { type: "spring", duration: 0.4 },
-    },
-    exit: { opacity: 0, y: -10, scale: 0.95 },
-  };
-
   const handleMouseEnter = (index) => {
     setActiveDropdown(index);
+    setHoveredIndex(index);
   };
 
   const handleMouseLeave = () => {
     setActiveDropdown(null);
+    setHoveredIndex(null);
   };
 
   return (
-    <nav className="hidden lg:flex items-center h-full">
-      <div className="bg-gray-100 rounded-full p-1 flex space-x-1">
-        {navItems.map((item, index) => (
-          <motion.div
-            key={item.name}
-            className="relative h-full flex items-center"
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 + index * 0.05 }}
-            onMouseEnter={() => item.subItems && handleMouseEnter(index)}
-            onMouseLeave={handleMouseLeave}
-          >
-            {item.subItems ? (
-              <>
-                <button
-                  className={`flex items-center px-5 py-2.5 font-medium transition-colors rounded-full relative ${
-                    activeDropdown === index
-                      ? "bg-white shadow-sm text-blue-600"
-                      : "text-gray-700 hover:text-blue-600 hover:bg-white hover:shadow-sm"
-                  }`}
-                >
-                  <span>{item.name}</span>
-                  <motion.span
-                    animate={{ rotate: activeDropdown === index ? 180 : 0 }}
-                    initial={{ rotate: 0 }}
-                    transition={{ duration: 0.2 }}
-                    className={`ml-1 ${
-                      activeDropdown === index ? "text-blue-500" : ""
-                    }`}
-                  >
-                    <ChevronDown size={16} />
-                  </motion.span>
-                </button>
+    <nav className="hidden lg:flex items-center h-full ml-8 mr-4">
+      <ul className="flex items-center gap-1 relative">
+        {navItems.map((item, index) => {
+          const isActive = activeDropdown === index || hoveredIndex === index;
 
-                <AnimatePresence>
-                  {activeDropdown === index && (
-                    <motion.div
-                      className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[500px] bg-white shadow-xl rounded-lg z-50 overflow-hidden border border-gray-100"
-                      variants={dropdownVariants}
-                      initial="hidden"
-                      animate="visible"
-                      exit="exit"
-                    >
-                      <div className="h-1 bg-linear-to-r from-blue-400 to-green-500 w-full"></div>
-                      <div className="grid grid-cols-2 gap-2 p-2">
-                        {item.subItems.map((sub) => (
-                          <Link
-                            key={sub.name}
-                            href={sub.href}
-                            target={
-                              sub.href.startsWith("http") ? "_blank" : undefined
-                            }
-                            rel={
-                              sub.href.startsWith("http")
-                                ? "noopener noreferrer"
-                                : undefined
-                            }
-                            className="flex items-center px-4 py-3 text-sm text-gray-600 hover:bg-blue-50 hover:text-blue-600 transition-colors group rounded-md"
-                          >
-                            {sub.icon && (
-                              <span className="mr-3 text-blue-500 group-hover:scale-110 transition-transform">
-                                {sub.icon}
-                              </span>
-                            )}
-                            <span>{sub.name}</span>
-                            <ChevronRight
-                              size={14}
-                              className="ml-auto text-green-500 opacity-0 group-hover:opacity-100 transition-opacity"
-                            />
-                          </Link>
-                        ))}
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </>
-            ) : (
+          return (
+            <li
+              key={item.name}
+              className="relative py-2"
+              onMouseEnter={() => handleMouseEnter(index)}
+              onMouseLeave={handleMouseLeave}
+            >
               <Link
                 href={item.href}
-                className="flex items-center px-5 py-2.5 text-gray-700 hover:text-blue-600 font-medium transition-colors rounded-full hover:bg-white hover:shadow-sm"
+                className={`flex items-center px-4 py-2 text-sm font-semibold transition-all duration-300 rounded-full relative z-10 ${
+                  isActive ? "text-primary" : "text-gray-600 hover:text-primary"
+                }`}
               >
                 <span>{item.name}</span>
+                {item.subItems && (
+                  <ChevronDown
+                    size={14}
+                    className={`ml-1 transition-transform duration-300 ${
+                      activeDropdown === index ? "rotate-180" : ""
+                    }`}
+                  />
+                )}
               </Link>
-            )}
-          </motion.div>
-        ))}
-      </div>
+
+              {/* Shared Layout Highlight */}
+              {hoveredIndex === index && (
+                <motion.div
+                  layoutId="nav-pill"
+                  className="absolute inset-0 bg-primary/5 rounded-full z-0 pointer-events-none border border-primary/10"
+                  initial={false}
+                  transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                />
+              )}
+
+              {/* Modern Megamenu Dropdown */}
+              <AnimatePresence>
+                {activeDropdown === index && item.subItems && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 15, scale: 0.95 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: 15, scale: 0.95 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 25 }}
+                    className={`absolute top-full ${
+                      isRTL ? "right-0" : "left-0"
+                    } mt-1 pt-2 z-50`}
+                  >
+                    <div className="w-[500px] bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-gray-100 overflow-hidden ring-1 ring-black/5">
+                      {/* Dropdown Header Accent */}
+                      <div className="h-1.5 bg-linear-to-r from-primary via-secondary to-primary/80"></div>
+                      
+                      <div className="p-4 grid grid-cols-2 gap-3">
+                        {item.subItems.map((sub, sIdx) => (
+                          <motion.div
+                            key={sub.name}
+                            initial={{ opacity: 0, x: isRTL ? 10 : -10 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: sIdx * 0.05 }}
+                          >
+                            <Link
+                              href={sub.href}
+                              className="group flex items-start gap-4 p-3 rounded-xl hover:bg-primary/5 transition-all duration-300 cursor-pointer h-full"
+                            >
+                              <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-gray-50 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                                {sub.icon || <Sparkles size={18} />}
+                              </div>
+                              <div className="flex-1">
+                                <h4 className="text-sm font-bold text-gray-800 group-hover:text-primary transition-colors flex items-center">
+                                  {sub.name}
+                                  <ChevronRight size={12} className={`ml-1 opacity-0 group-hover:opacity-100 transition-all ${isRTL ? 'rotate-180' : ''}`} />
+                                </h4>
+                                {sub.description && (
+                                  <p className="text-[11px] text-gray-500 mt-0.5 line-clamp-1 leading-tight">
+                                    {sub.description}
+                                  </p>
+                                )}
+                              </div>
+                            </Link>
+                          </motion.div>
+                        ))}
+                      </div>
+
+                      {/* Dropdown Footer CTA */}
+                      <div className="bg-gray-50/80 px-6 py-3 flex items-center justify-between border-t border-gray-100">
+                        <span className="text-[11px] font-medium text-gray-400 italic">
+                          Start your spiritual journey today
+                        </span>
+                        <Link href="/enroll" className="text-xs font-bold text-primary hover:underline flex items-center gap-1">
+                          Enroll Now <ChevronRight size={12} />
+                        </Link>
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </li>
+          );
+        })}
+      </ul>
     </nav>
   );
 };

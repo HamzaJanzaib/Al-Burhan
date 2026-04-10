@@ -15,7 +15,7 @@ export default function Footer() {
 
   return (
     <FooterProvider>
-      <footer className={`relative bg-linear-to-b from-[var(--hover-primary)] via-[var(--color-primary)] to-black text-white ${isMobile ? 'pt-10 pb-6' : 'pt-20 pb-10'} overflow-hidden`}>
+      <footer className={`relative bg-linear-to-b from-primary/80 via-primary to-black text-primary-foreground ${isMobile ? 'pt-10 pb-6' : 'pt-20 pb-10'} overflow-hidden`}>
         <FooterBackground />
 
         <div className="relative max-w-7xl mx-auto px-6 sm:px-8 z-10">
