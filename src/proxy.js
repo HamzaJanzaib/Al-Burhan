@@ -22,5 +22,5 @@ export default function proxy(request) {
 
 export const config = {
   // Matcher ignoring `/_next/`, `/api/`, `/favicon.ico` and all public static assets
-  matcher: ["/((?!api|_next/static|_next/image|favicon.ico|al-burhan).*)"],
+  matcher: ["/((?!api|_next/static|_next/image|favicon.ico|al-burhan|404).*)"],
 };
