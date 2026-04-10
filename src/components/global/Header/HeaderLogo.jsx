@@ -4,10 +4,10 @@ import Image from "next/image";
 
 const HeaderLogo = () => {
   return (
-    <div className="flex-1 flex justify-start cursor-pointer">
+    <div className="flex-1 select-none flex justify-start cursor-pointer">
       <Link href="/" className="flex items-center space-x-[.5rem]">
-        <div className="relative flex items-center">
-          <div className="relative w-16 md:w-20 h-16 md:h-20 shrink-0">
+        <div className="relative flex items-center gap-1">
+          <div className="relative w-12 md:w-16 h-12 md:h-16 shrink-0">
             <Image
               src="/al-burhan/Logo/WEBP/logo-primary.webp"
               alt="AL Burhan Academy Logo"
@@ -17,7 +17,7 @@ const HeaderLogo = () => {
               className="object-contain drop-shadow-md select-none"
             />
           </div>
-          <div className="flex flex-col leading-tight">
+          <div className="flex mt-1 flex-col leading-tight">
             <h1 className="text-md sm:text-lg md:text-md font-bold text-(--color-primary)">
               AL Burhan
             </h1>
