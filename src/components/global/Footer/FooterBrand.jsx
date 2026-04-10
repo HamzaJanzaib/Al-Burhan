@@ -52,8 +52,8 @@ const FooterBrand = () => {
             <Image
               src="/al-burhan/Logo/WEBP/logo-primary.webp"
               alt="AL Burhan Quran Academy Logo"
-              fill
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              width={100}
+              height={100}
               className="object-contain select-none p-2"
             />
           </div>

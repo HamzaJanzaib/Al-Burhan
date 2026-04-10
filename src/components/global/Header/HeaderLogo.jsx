@@ -7,7 +7,7 @@ const HeaderLogo = () => {
     <div className="flex-1 flex justify-start cursor-pointer">
       <Link href="/" className="flex items-center space-x-[.5rem]">
         <div className="relative flex items-center">
-          <div className="relative w-16 md:w-20 h-16 md:h-25 shrink-0">
+          <div className="relative w-16 md:w-20 h-16 md:h-20 shrink-0">
             <Image
               src="/al-burhan/Logo/WEBP/logo-primary.webp"
               alt="AL Burhan Academy Logo"
