@@ -48,12 +48,12 @@ const FooterBrand = () => {
           <div className="absolute w-20 h-20 bg-(--color-accent)/25 rounded-full blur-xl animate-pulse-smooth"></div>
 
           {/* Logo Container */}
-          <div className="relative w-40 bg-white/10 backdrop-blur-md rounded-full h-40 flex items-center justify-center animate-heartbeat p-4">
+          <div className="relative w-40 rounded-full h-40 flex items-center justify-center animate-heartbeat">
             <Image
               src="/al-burhan/Logo/WEBP/logo-primary.webp"
               alt="AL Burhan Quran Academy Logo"
-              width={100}
-              height={100}
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               className="object-contain select-none p-2"
             />
           </div>
