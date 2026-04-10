@@ -7,6 +7,7 @@ import { HeaderProvider } from "@/context/HeaderContext";
 import Header from "@/components/global/Header/Header";
 import Footer from "@/components/global/Footer/Footer";
 import { Toaster } from "@/components/global/sonner";
+import PageLoader from "@/components/global/PageLoader";
 
 const outfit = Outfit({
   variable: "--font-outfit",
@@ -45,6 +46,7 @@ export default async function RootLayout({ children, params }) {
           <ServicesProvider>
             <HeaderProvider>
               <div className="max-w-screen overflow-x-hidden">
+                <PageLoader />
                 <Header />
                 <main className="max-w-screen overflow-x-hidden pt-24 bg-background min-h-screen">
                   {children}
