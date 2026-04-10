@@ -60,7 +60,7 @@ export default function HifzPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
           >
-            <Link href="/enroll" className="px-10 py-4 rounded-full bg-secondary text-primary font-bold shadow-xl hover:scale-105 active:scale-95 transition-all">
+            <Link href="/enroll?course=Quran Memorization (Hifz)" className="px-10 py-4 rounded-full bg-secondary text-primary font-bold shadow-xl hover:scale-105 active:scale-95 transition-all">
               Start Memorizing
             </Link>
           </motion.div>
