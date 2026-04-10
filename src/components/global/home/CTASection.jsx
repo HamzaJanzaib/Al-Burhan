@@ -107,7 +107,7 @@ export default function CTASection() {
                   <motion.span 
                     animate={{ x: ["-150%", "250%", "250%"] }}
                     transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", repeatDelay: 2 }}
-                    className="absolute top-0 -left-[100%] w-[100%] h-full bg-linear-to-r from-transparent via-white/50 to-transparent skew-x-[-25deg] pointer-events-none z-0" 
+                    className="absolute top-0 -left-full w-full h-full bg-linear-to-r from-transparent via-white/50 to-transparent skew-x-[-25deg] pointer-events-none z-0" 
                   />
                 </button>
               </Link>

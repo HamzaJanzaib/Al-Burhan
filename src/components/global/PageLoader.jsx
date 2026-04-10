@@ -79,7 +79,7 @@ export default function PageLoader() {
                 },
                 opacity: { duration: 0.6 },
               }}
-              className="relative w-36 h-36 md:w-48 md:h-48 rounded-full overflow-hidden shadow-2xl border-[4px] border-secondary/60"
+              className="relative w-36 h-36 md:w-48 md:h-48 rounded-full overflow-hidden shadow-2xl border-4 border-secondary/60"
             >
               <Image
                 src="/al-burhan/Logo/PNG/orignal transparent.png"

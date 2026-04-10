@@ -164,7 +164,7 @@ export default function HistorySection() {
               <motion.span 
                 animate={{ x: ["-150%", "300%", "300%"] }}
                 transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", repeatDelay: 1 }}
-                className="absolute top-0 w-[100%] h-full bg-linear-to-r from-transparent via-white/30 to-transparent skew-x-[-25deg] pointer-events-none z-20" 
+                className="absolute top-0 w-full h-full bg-linear-to-r from-transparent via-white/30 to-transparent skew-x-[-25deg] pointer-events-none z-20" 
               />
             </motion.div>
             
@@ -186,7 +186,7 @@ export default function HistorySection() {
               <motion.span 
                 animate={{ x: ["-150%", "300%", "300%"] }}
                 transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", repeatDelay: 1.5 }}
-                className="absolute top-0 w-[100%] h-full bg-linear-to-r from-transparent via-white/30 to-transparent skew-x-[-25deg] pointer-events-none z-20" 
+                className="absolute top-0 w-full h-full bg-linear-to-r from-transparent via-white/30 to-transparent skew-x-[-25deg] pointer-events-none z-20" 
               />
             </motion.div>
 

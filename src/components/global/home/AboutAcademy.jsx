@@ -41,7 +41,7 @@ export default function AboutAcademy() {
 
           {/* Main Image Container */}
           <motion.div 
-            className="flex-1 w-full relative z-20 aspect-4/3 lg:aspect-5/4 overflow-hidden rounded-[2.5rem] border-[12px] border-background shadow-2xl bg-slate-200"
+            className="flex-1 w-full relative z-20 aspect-4/3 lg:aspect-5/4 overflow-hidden rounded-[2.5rem] border-12 border-background shadow-2xl bg-slate-200"
             whileHover={{ scale: 1.02 }}
             transition={{ type: "spring", stiffness: 300, damping: 20 }}
           >
