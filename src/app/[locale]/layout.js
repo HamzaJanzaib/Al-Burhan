@@ -1,6 +1,7 @@
 import { Outfit, Geist_Mono } from "next/font/google";
 import "../globals.css";
 import { languages } from "@/i18n/setting";
+import { AppProvider } from "@/context/providers/AppProvider";
 
 const outfit = Outfit({
   variable: "--font-outfit",
@@ -24,7 +25,7 @@ export async function generateStaticParams() {
 
 export default async function RootLayout({ children, params }) {
   const { locale } = await params;
-  
+
   // Set direction based on locale (Urdu is RTL)
   const dir = locale === "ur" ? "rtl" : "ltr";
 
@@ -34,7 +35,9 @@ export default async function RootLayout({ children, params }) {
       dir={dir}
       className={`${outfit.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <AppProvider>{children}</AppProvider>
+      </body>
     </html>
   );
 }
