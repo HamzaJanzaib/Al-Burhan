@@ -31,6 +31,8 @@ export default function HistorySection() {
     "Feeding Hungry People"
   ];
 
+  const headingText = "Know The Real History of Islam".split(" ");
+
   return (
     <section className="relative w-full py-2 lg:py-6 bg-background overflow-hidden">
 
@@ -56,8 +58,34 @@ export default function HistorySection() {
             Welcome to the Islamic Center
           </motion.h4>
           
-          <motion.h2 variants={fadeInUp} className="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold text-foreground leading-[1.1] max-w-2xl px-4">
-            Know The Real History of Islam
+          <motion.h2 
+            variants={{
+              hidden: { opacity: 0 },
+              visible: { opacity: 1, transition: { staggerChildren: 0.08 } }
+            }}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold text-foreground leading-[1.1] max-w-2xl px-4 flex flex-wrap justify-center gap-x-3 gap-y-2 mt-4"
+          >
+            {headingText.map((word, idx) => (
+              <motion.span 
+                key={idx}
+                variants={{
+                  hidden: { opacity: 0, y: 30, rotateX: -60 },
+                  visible: { 
+                    opacity: 1, 
+                    y: 0, 
+                    rotateX: 0, 
+                    transition: { duration: 0.8, ease: "backOut" } 
+                  }
+                }}
+                style={{ transformPerspective: 800 }}
+                className="inline-block hover:text-primary transition-colors duration-300 cursor-default"
+              >
+                {word}
+              </motion.span>
+            ))}
           </motion.h2>
         </motion.div>
 
@@ -81,11 +109,17 @@ export default function HistorySection() {
                 <motion.li 
                   key={idx} 
                   variants={fadeInUp}
-                  className="flex items-center gap-4 text-foreground font-semibold text-lg"
+                  whileHover={{ x: 10, scale: 1.02 }}
+                  className="flex items-center gap-4 text-foreground font-semibold text-lg cursor-pointer group"
                 >
-                  {/* Perfectly themed primary color dot */}
-                  <div className="w-2.5 h-2.5 rounded-full bg-primary shrink-0 shadow-[0_0_8px_rgba(13,92,92,0.6)]" />
-                  {item}
+                  {/* Perfectly themed primary color dot that scales and glows strictly using Tailwind theme variables */}
+                  <motion.div 
+                    initial={{ scale: 1 }}
+                    whileHover={{ scale: 1.3 }}
+                    transition={{ type: "spring", stiffness: 400 }}
+                    className="w-2.5 h-2.5 rounded-full bg-primary shrink-0 transition-colors duration-300 shadow-[0_0_8px_rgba(204,255,0,0)] group-hover:shadow-[0_0_15px_rgba(204,255,0,0.5)] group-hover:bg-secondary" 
+                  />
+                  <span className="group-hover:text-primary transition-colors duration-300 w-full">{item}</span>
                 </motion.li>
               ))}
             </ul>
