@@ -8,6 +8,7 @@ import MarqueeSection from "@/components/global/home/MarqueeSection";
 import AboutAcademy from "@/components/global/home/AboutAcademy";
 import HistorySection from "@/components/global/home/HistorySection";
 import CTASection from "@/components/global/home/CTASection";
+import AyatSliderSection from "@/components/global/home/AyatSliderSection";
 import PrayerTimes from "@/components/global/home/PrayerTimes";
 import InspirationSection from "@/components/global/home/InspirationSection";
 import Link from "next/link";
@@ -52,6 +53,7 @@ export default async function Home({ params }) {
       <HistorySection />
       <TestimonialsSection />
       <CTASection />
+      {/* <AyatSliderSection /> */}
     </main>
   );
 }
