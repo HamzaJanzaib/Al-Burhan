@@ -6,6 +6,7 @@ import { ServicesProvider } from "@/context/ServicesContext";
 import { HeaderProvider } from "@/context/HeaderContext";
 import Header from "@/components/global/Header/Header";
 import Footer from "@/components/global/Footer/Footer";
+import { Toaster } from "@/components/global/sonner";
 
 const outfit = Outfit({
   variable: "--font-outfit",
@@ -49,6 +50,7 @@ export default async function RootLayout({ children, params }) {
                   {children}
                 </main>
                 <Footer />
+                <Toaster />
               </div>
             </HeaderProvider>
           </ServicesProvider>

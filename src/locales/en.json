@@ -132,7 +132,8 @@
             "admissions": "Admissions",
             "office": "Main Office",
             "hours": "Working Hours",
-            "days": "Mon - Sun, 24/7 (Online)"
+            "days": "Mon - Sun, 24/7 (Online)",
+            "subject": "Subject"
         },
         "form": {
             "title": "Send a Message",

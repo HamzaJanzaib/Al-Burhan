@@ -17,7 +17,7 @@ import {
   Star
 } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import { toast } from "react-hot-toast";
+import { toast } from "sonner";
 import { submitContactForm } from "../../../../services/contactService";
 import BookingInput from "../../../../components/global/Booking/BookingInput";
 
@@ -26,7 +26,7 @@ const ContactInfoCard = ({ icon: Icon, title, content, delay }) => (
     initial={{ opacity: 0, y: 20 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ delay, duration: 0.5 }}
-    className="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/10 hover:bg-white/20 transition-all group"
+    className="bg-background/10 backdrop-blur-md p-6 rounded-2xl border border-white/10 hover:bg-background/20 transition-all group"
   >
     <div className="flex items-center gap-4">
       <div className="w-12 h-12 rounded-xl bg-secondary/20 flex items-center justify-center text-secondary group-hover:scale-110 transition-transform">
@@ -34,7 +34,7 @@ const ContactInfoCard = ({ icon: Icon, title, content, delay }) => (
       </div>
       <div>
         <h4 className="text-sm font-bold text-secondary/80 uppercase tracking-widest">{title}</h4>
-        <p className="text-lg font-bold text-white mt-1">{content}</p>
+        <p className="text-lg font-medium text-primary-foreground mt-1">{content}</p>
       </div>
     </div>
   </motion.div>
@@ -88,7 +88,7 @@ function ContactPageContent() {
   };
 
   return (
-    <div className="md:h-screen min-h-screen bg-white flex flex-col md:flex-row overflow-hidden pt-20 md:pt-0">
+    <div className="md:h-[calc(100vh-theme(spacing.24))] min-h-screen bg-background flex flex-col md:flex-row overflow-hidden md:pt-0">
       {/* Left Visual Panel */}
       <div className="hidden lg:flex lg:w-5/12 relative bg-primary text-white p-12 flex-col justify-between overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -99,7 +99,7 @@ function ContactPageContent() {
             className="object-cover opacity-20 mix-blend-overlay"
           />
           <div className="absolute inset-0 bg-linear-to-b from-primary/95 via-primary/80 to-primary/90" />
-          <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+          <div className="absolute top-0 right-0 w-64 h-64 bg-background/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
         </div>
 
         <motion.div
@@ -107,7 +107,7 @@ function ContactPageContent() {
           animate={{ opacity: 1, x: 0 }}
           className="relative z-10"
         >
-          <div className="mb-4 inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-4 py-1.5 rounded-full border border-white/20">
+          <div className="mb-4 inline-flex items-center gap-2 bg-background/10 backdrop-blur-md px-4 py-1.5 rounded-full border border-white/20">
             <Star size={16} className="text-secondary fill-secondary" />
             <span className="text-sm font-semibold tracking-wide">
               {t("contact_page.subtitle")}
