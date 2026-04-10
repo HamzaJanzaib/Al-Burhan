@@ -152,7 +152,7 @@ const MobileMenu = () => {
                 </Link>
                 <button
                   onClick={() => setMobileMenuOpen(false)}
-                  className="p-2.5 rounded-full bg-gray-50 hover:bg-primary/10 text-gray-500 hover:text-primary transition-colors focus:ring-2 focus:ring-primary/20 outline-none"
+                  className="p-2.5 rounded-full bg-gray-50 hover:bg-primary/10 text-gray-500 hover:text-primary transition-colors focus:ring-2 focus:ring-primary/20 outline-none cursor-pointer"
                 >
                   <X size={20} />
                 </button>
@@ -170,7 +170,7 @@ const MobileMenu = () => {
                           <>
                             <button
                               onClick={() => setExpandedMobileItem(isExpanded ? null : item.name)}
-                              className={`py-3.5 px-4 rounded-xl text-[15px] font-semibold transition-all flex items-center justify-between group w-full text-left outline-none ${
+                              className={`py-3.5 px-4 rounded-xl text-[15px] font-semibold transition-all flex items-center justify-between group w-full text-left outline-none cursor-pointer ${
                                 isExpanded
                                   ? "bg-primary/10 text-primary border border-primary/20"
                                   : "text-gray-700 hover:bg-gray-50 border border-transparent"
@@ -223,7 +223,7 @@ const MobileMenu = () => {
                           <Link
                             href={item.href}
                             onClick={() => setMobileMenuOpen(false)}
-                            className="py-3.5 px-4 rounded-xl text-[15px] font-semibold text-gray-700 hover:bg-gray-50 hover:text-primary transition-all flex items-center justify-between group active:scale-95 outline-none border border-transparent hover:border-gray-100"
+                            className="py-3.5 px-4 rounded-xl text-[15px] font-semibold text-gray-700 hover:bg-gray-50 hover:text-primary transition-all flex items-center justify-between group active:scale-95 outline-none border border-transparent hover:border-gray-100 cursor-pointer"
                           >
                             <span className="flex items-center gap-2">
                               {item.icon && <span className="text-primary/70">{item.icon}</span>}

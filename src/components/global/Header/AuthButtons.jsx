@@ -68,7 +68,7 @@ const AuthButtons = () => {
           >
             <Link
               href="/enroll"
-              className="relative group flex items-center gap-2 px-6 py-2.5 rounded-full font-bold text-sm text-primary-foreground overflow-hidden shadow-lg shadow-primary/20 transition-shadow hover:shadow-primary/40"
+              className="relative group flex items-center gap-2 px-6 py-2.5 rounded-full font-bold text-sm text-primary-foreground overflow-hidden shadow-lg shadow-primary/20 transition-shadow hover:shadow-primary/40 cursor-pointer"
             >
               {/* Gradient background */}
               <span className="absolute inset-0 bg-linear-to-r from-primary to-primary/80" />
@@ -170,7 +170,7 @@ const AuthButtons = () => {
                   <div className="py-1.5 px-1.5 space-y-0.5">
                     <Link
                       href="/profile"
-                      className="flex items-center gap-3 px-4 py-2.5 text-sm font-medium text-gray-700 hover:bg-primary/5 hover:text-primary rounded-xl transition-colors"
+                      className="flex items-center gap-3 px-4 py-2.5 text-sm font-medium text-gray-700 hover:bg-primary/5 hover:text-primary rounded-xl transition-colors cursor-pointer"
                     >
                       <User size={15} className="text-primary/60" />
                       {t("profile.view_profile")}

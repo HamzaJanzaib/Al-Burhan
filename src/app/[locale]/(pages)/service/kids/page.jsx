@@ -94,7 +94,7 @@ export default function KidsPage() {
         <div className="space-y-4">
           {steps.map((step, i) => (
             <motion.div key={step.num} initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }}
-              className="flex items-start gap-5 bg-card rounded-2xl p-5 border border-border hover:border-secondary/30 hover:shadow-md transition-all"
+              className="flex items-start gap-5 bg-card rounded-2xl p-5 border border-border hover:border-secondary/30 hover:shadow-md transition-all cursor-pointer"
             >
               <span className="text-3xl font-black text-secondary/30 shrink-0">{step.num}</span>
               <div>

@@ -106,7 +106,7 @@ export default function ServicesPage() {
               viewport={{ once: true }}
               transition={{ delay: i * 0.08 }}
               whileHover={{ y: -4 }}
-              className="group bg-card rounded-2xl border border-border overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300"
+              className="group bg-card rounded-2xl border border-border overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer"
             >
               <div className={`h-2 bg-linear-to-r ${course.color}`} />
               <div className="p-6">

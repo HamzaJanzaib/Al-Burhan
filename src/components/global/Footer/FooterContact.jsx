@@ -63,7 +63,7 @@ const FooterContact = () => {
           placeholder={t("footer.newsletter_placeholder")}
           className="px-4 py-2 rounded-t-lg sm:rounded-l-lg sm:rounded-t-none w-full text-gray-800 bg-gray-100 focus:outline-none focus:ring-2 focus:ring-(--color-secondary) transition"
         />
-        <button className="bg-(--color-primary) hover:bg-(--hover-primary) text-white px-6 py-2 rounded-b-lg sm:rounded-b-none sm:rounded-r-lg font-medium transition-transform duration-300 hover:translate-y-px cursor-pointer">
+        <button className="bg-secondary hover:bg-secondary/90 text-primary-foreground px-6 py-2 rounded-b-lg sm:rounded-b-none sm:rounded-r-lg font-bold transition-all duration-300 hover:scale-105 cursor-pointer shadow-lg shadow-black/10">
           {t("footer.newsletter_button")}
         </button>
       </div>
