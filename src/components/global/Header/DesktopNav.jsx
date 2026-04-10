@@ -34,9 +34,6 @@ const DesktopNav = () => {
       href: "/enroll",
       icon: <MapPin size={18} />,
     },
-    { name: t("nav.gallery"), href: "/gallery" },
-    { name: t("nav.reviews"), href: "/reviews" },
-    { name: t("nav.contact"), href: "/contact" },
   ];
 
   const handleMouseEnter = (index) => {
