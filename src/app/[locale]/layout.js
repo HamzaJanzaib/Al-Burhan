@@ -2,6 +2,10 @@ import { Outfit, Geist_Mono } from "next/font/google";
 import "../globals.css";
 import { languages } from "@/i18n/setting";
 import { AppProvider } from "@/context/providers/AppProvider";
+import { ServicesProvider } from "@/context/ServicesContext";
+import { HeaderProvider } from "@/context/HeaderContext";
+import Header from "@/components/global/Header/Header";
+import Footer from "@/components/global/Footer/Footer";
 
 const outfit = Outfit({
   variable: "--font-outfit",
@@ -35,8 +39,20 @@ export default async function RootLayout({ children, params }) {
       dir={dir}
       className={`${outfit.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
-        <AppProvider>{children}</AppProvider>
+      <body>
+        <AppProvider>
+          <ServicesProvider>
+            <HeaderProvider>
+              <div className="max-w-screen overflow-x-hidden">
+                <Header />
+                <main className="max-w-screen overflow-x-hidden bg-background">
+                  {children}
+                </main>
+                <Footer />
+              </div>
+            </HeaderProvider>
+          </ServicesProvider>
+        </AppProvider>
       </body>
     </html>
   );

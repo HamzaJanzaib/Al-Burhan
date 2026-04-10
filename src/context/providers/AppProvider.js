@@ -51,10 +51,10 @@ export const AppProvider = ({ children }) => {
       },
       // App metadata
       metadata: {
-        name: "AL Burhan",
-        description: "Professional services",
+        name: "AL Burhan Quran Academy",
+        description: "Professional Online Quran Academy",
         author: "AL Burhan",
-        keywords: ["services", "quality", "trust"],
+        keywords: ["Quran", "Academy", "Online Learning", "AL Burhan", "Tajweed", "Hifz"],
       },
       // App configuration
       config: {

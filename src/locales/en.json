@@ -1,4 +1,98 @@
 {
-    "title": "AL Burhan",
-    "description": "Language support is now active."
+    "title": "AL Burhan Quran Academy",
+    "description": "Language support is now active.",
+    "announcement_quran": "Start Your Journey with Quran",
+    "announcement_trial": "Free 3-Day Trial Classes",
+    "announcement_certified": "Learn from Certified Tutors",
+    "enroll_now": "Enroll Now",
+    "claim_offer": "Claim Now",
+    "book_now": "Book Now",
+    "special_offer": "Special Offer",
+    "air_quality": "High Quality Quran Learning",
+    "clean_home": "Learn from Home",
+    "footer": {
+        "slogan": "Nurturing Souls with the Light of Quran. Join our global community of learners today.",
+        "stayConnected_title": "Stay Connected",
+        "contact_phone": "+1 (416) 000-0000",
+        "contact_email": "info@alburhan.com",
+        "contact_address": "Global Online Classes",
+        "newsletter_title": "Subscribe to our Newsletter",
+        "newsletter_placeholder": "Your Email Address",
+        "newsletter_button": "Subscribe",
+        "quickLinks_title": "Quick Links",
+        "quickLinks": ["Home", "About", "Courses", "Gallery", "Reviews", "Contact"],
+        "services_title": "Our Courses",
+        "services": ["Tajweed", "Hifz Quran", "Basic Qaida", "Islamic Studies", "Arabic Language"],
+        "bottom_rights": "All Rights Reserved.",
+        "bottom_developedBy": "Developed by ",
+        "privacy": "Privacy Policy",
+        "terms": "Terms of Service",
+        "faq": "FAQ"
+    },
+    "nav": {
+        "home": "Home",
+        "about": "About",
+        "services": "Courses",
+        "online_classes": "Online Classes",
+        "gallery": "Gallery",
+        "reviews": "Reviews",
+        "contact": "Contact"
+    },
+    "service": {
+        "tajweed_al_quran": {
+            "title": "Tajweed Al-Quran",
+            "description": "Master the rules of proper Quranic pronunciation and recitation.",
+            "process_list": {
+                "introduction": "Intro to Tajweed Rules",
+                "rules": "Deep Dive into Articulation",
+                "practice": "Guided Recitation Practice",
+                "certification": "Oral Assessment & Certification"
+            }
+        },
+        "quran_reading": {
+            "title": "Quran Reading",
+            "description": "Learn to read the Quran with fluency and accuracy.",
+            "process_list": {
+                "qaida": "Basic Qaida Lessons",
+                "fluency": "Word Connection & Flow",
+                "recitation": "Full Page Recitation"
+            }
+        },
+        "quran_memorization": {
+            "title": "Quran Memorization (Hifz)",
+            "description": "A structured program to help students memorize the Holy Quran.",
+            "process_list": {
+                "assessment": "Initial Memory Check",
+                "memorization": "Surah by Surah Learning",
+                "revision": "Daily & Weekly Revision"
+            }
+        },
+        "islamic_studies": {
+            "title": "Islamic Studies",
+            "description": "Comprehensive courses on Fiqh, Hadith, Seerah, and History.",
+            "process_list": {
+                "curriculum": "Topic Overview",
+                "sessions": "Interactive Lectures",
+                "application": "Case Studies & Life Application"
+            }
+        },
+        "arabic_language": {
+            "title": "Arabic Language",
+            "description": "Learn to speak, read, and write Arabic efficiently.",
+            "process_list": {
+                "basics": "Alphabet & Basic Vocab",
+                "grammar": "Essential Grammar Rules",
+                "translation": "Quranic Translation Skills"
+            }
+        },
+        "quran_for_kids": {
+            "title": "Quran for Kids",
+            "description": "Interactive Quran lessons designed specially for children.",
+            "process_list": {
+                "onboarding": "Placement Assessment",
+                "learning": "Engaging Lesson Plans",
+                "reward": "Certificates & Rewards"
+            }
+        }
+    }
 }

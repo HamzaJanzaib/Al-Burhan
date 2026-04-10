@@ -1,4 +1,98 @@
 {
-    "title": "البرہان",
-    "description": "زبان کی معاونت اب فعال ہے۔"
+    "title": "البرہان قرآن اکیڈمی",
+    "description": "زبان کی معاونت اب فعال ہے۔",
+    "announcement_quran": "قرآن کے ساتھ اپنا سفر شروع کریں",
+    "announcement_trial": "3 روزہ مفت ٹرائل کلاسز",
+    "announcement_certified": "مصدقہ اساتذہ سے سیکھیں",
+    "enroll_now": "ابھی داخلہ لیں",
+    "claim_offer": "ابھی حاصل کریں",
+    "book_now": "ابھی بک کریں",
+    "special_offer": "خصوصی پیشکش",
+    "air_quality": "اعلیٰ معیار کی قرآن تعلیم",
+    "clean_home": "گھر بیٹھے سیکھیں",
+    "footer": {
+        "slogan": "قرآن کے نور سے روحوں کی آبیاری۔ آج ہی ہمارے عالمی سیکھنے والوں کے گروپ میں شامل ہوں۔",
+        "stayConnected_title": "رابطے میں رہیں",
+        "contact_phone": "+1 (416) 000-0000",
+        "contact_email": "info@alburhan.com",
+        "contact_address": "عالمی آن لائن کلاسز",
+        "newsletter_title": "ہمارے نیوز لیٹر کو سبسکرائب کریں",
+        "newsletter_placeholder": "آپ کا ای میل ایڈریس",
+        "newsletter_button": "سبسکرائب کریں",
+        "quickLinks_title": "فوری لنکس",
+        "quickLinks": ["ہوم", "ہمارے بارے میں", "کورسز", "گیلری", "ریویوز", "رابطہ"],
+        "services_title": "ہمارے کورسز",
+        "services": ["تجوید", "حفظ قرآن", "بنیادی قاعدہ", "اسلامی تعلیمات", "عربی زبان"],
+        "bottom_rights": "جملہ حقوق محفوظ ہیں۔",
+        "bottom_developedBy": "تیار کردہ ",
+        "privacy": "پرائیویسی پالیسی",
+        "terms": "سروس کی شرائط",
+        "faq": "اکثر پوچھے گئے سوالات"
+    },
+    "nav": {
+        "home": "ہوم",
+        "about": "ہمارے بارے میں",
+        "services": "کورسز",
+        "online_classes": "آن لائن کلاسز",
+        "gallery": "گیلری",
+        "reviews": "ریویوز",
+        "contact": "رابطہ"
+    },
+    "service": {
+        "tajweed_al_quran": {
+            "title": "تجوید القرآن",
+            "description": "قرآنی تلفظ اور تلاوت کے قواعد میں مہارت حاصل کریں۔",
+            "process_list": {
+                "introduction": "تجوید کے قواعد کا تعارف",
+                "rules": "مخارج الحروف کی گہرائی",
+                "practice": "نگرانی میں تلاوت کی مشق",
+                "certification": "زبانی جائزہ اور سند"
+            }
+        },
+        "quran_reading": {
+            "title": "ناظرہ قرآن",
+            "description": "روانی اور درستی کے ساتھ قرآن پڑھنا سیکھیں۔",
+            "process_list": {
+                "qaida": "بنیادی قاعدہ کے اسباق",
+                "fluency": "الفاظ کا جوڑ اور روانی",
+                "recitation": "مکمل صفحہ کی تلاوت"
+            }
+        },
+        "quran_memorization": {
+            "title": "حفظ قرآن",
+            "description": "قرآن مجید کو حفظ کرنے میں مدد کے لیے ایک منظم پروگرام۔",
+            "process_list": {
+                "assessment": "ابتدائی یادداشت کا جائزہ",
+                "memorization": "سورت وار حفظ",
+                "revision": "روزانہ اور ہفتہ وار دہرا"
+            }
+        },
+        "islamic_studies": {
+            "title": "اسلامی تعلیمات",
+            "description": "فقہ، حدیث، سیرت اور تاریخ پر جامع کورسز۔",
+            "process_list": {
+                "curriculum": "موضوعات کا جائزہ",
+                "sessions": "انٹرایکٹو لیکچرز",
+                "application": "عملی زندگی میں اطلاق"
+            }
+        },
+        "arabic_language": {
+            "title": "عربی زبان",
+            "description": "موثر طریقے سے عربی بولنا، پڑھنا اور لکھنا سیکھیں۔",
+            "process_list": {
+                "basics": "حروف تہجی اور بنیادی الفاظ",
+                "grammar": "ضروری گرائمری قواعد",
+                "translation": "قرآنی ترجمہ کی مہارت"
+            }
+        },
+        "quran_for_kids": {
+            "title": "بچوں کے لیے قرآن",
+            "description": "خصوصی طور پر بچوں کے لیے ڈیزائن کردہ انٹرایکٹو قرآنی اسباق۔",
+            "process_list": {
+                "onboarding": "تعلیمی سطح کا جائزہ",
+                "learning": "دلچسپ سبق کے منصوبے",
+                "reward": "اسناد اور انعامات"
+            }
+        }
+    }
 }
