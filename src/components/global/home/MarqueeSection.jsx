@@ -22,7 +22,7 @@ export default function MarqueeSection() {
   return (
     <section className="relative w-full py-6 md:py-8 bg-primary overflow-hidden flex items-center border-y border-white/5 shadow-2xl group cursor-pointer">
       {/* Decorative gradient overlays to fade the edges seamlessly */}
-      <div className="absolute inset-y-0 left-0 w-16 md:w-40 bg-gradient-to-r from-primary to-transparent z-10 pointer-events-none" />
+      <div className="absolute inset-y-0 left-0 w-16 md:w-40 bg-linear-to-r from-primary to-transparent z-10 pointer-events-none" />
       
       <div className="flex w-full overflow-hidden">
         {/* The motion container handles the infinite scroll */}
@@ -34,7 +34,7 @@ export default function MarqueeSection() {
             ease: "linear",
             repeat: Infinity,
           }}
-          className="flex whitespace-nowrap w-fit group-hover:[animation-play-state:paused] hover:[animation-play-state:paused]"
+          className="flex whitespace-nowrap w-fit group-hover:paused hover:paused"
         >
           {marqueeItems.map((feature, index) => (
             <div
@@ -55,7 +55,7 @@ export default function MarqueeSection() {
         </motion.div>
       </div>
 
-      <div className="absolute inset-y-0 right-0 w-16 md:w-40 bg-gradient-to-l from-primary to-transparent z-10 pointer-events-none" />
+      <div className="absolute inset-y-0 right-0 w-16 md:w-40 bg-linear-to-l from-primary to-transparent z-10 pointer-events-none" />
     </section>
   );
 }

@@ -36,7 +36,7 @@ export default function HistorySection() {
   return (
     <section className="relative w-full py-2 lg:py-6 bg-background overflow-hidden">
 
-      <div className="w-full xl:max-w-[85rem] mx-auto px-6 lg:px-8 relative z-10">
+      <div className="w-full xl:max-w-340 mx-auto px-6 lg:px-8 relative z-10">
         
         {/* Top Header Section */}
         <motion.div 
@@ -137,7 +137,7 @@ export default function HistorySection() {
                   <div className="absolute inset-0 bg-secondary translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out z-0" />
                   
                   {/* The actual sweeping 'Shine' effect */}
-                  <span className="absolute top-0 -left-[150%] w-[100%] h-full bg-linear-to-r from-transparent via-white/50 to-transparent skew-x-[-25deg] group-hover:translate-x-[300%] transition-transform duration-1000 ease-in-out pointer-events-none z-20" />
+                  <span className="absolute top-0 -left-[150%] w-full h-full bg-linear-to-r from-transparent via-white/50 to-transparent skew-x-[-25deg] group-hover:translate-x-[300%] transition-transform duration-1000 ease-in-out pointer-events-none z-20" />
                 </button>
               </Link>
             </motion.div>
@@ -152,7 +152,7 @@ export default function HistorySection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 1, ease: "easeOut" }}
-              className="w-[75%] h-[90%] rounded-t-full rounded-b-3xl border-[8px] border-background overflow-hidden relative shadow-2xl z-10 group cursor-pointer"
+              className="w-[75%] h-[90%] rounded-t-full rounded-b-3xl border-8 border-background overflow-hidden relative shadow-2xl z-10 group cursor-pointer"
             >
               <Image 
                 src="https://i.pinimg.com/736x/21/18/95/211895ceaa5f00838e9eec8e478ef222.jpg" 
@@ -174,7 +174,7 @@ export default function HistorySection() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
-              className="absolute left-0 bottom-[5%] w-[55%] aspect-square rounded-[40px] border-[10px] border-background overflow-hidden shadow-2xl z-20 group cursor-pointer"
+              className="absolute left-0 bottom-[5%] w-[55%] aspect-square rounded-[40px] border-10 border-background overflow-hidden shadow-2xl z-20 group cursor-pointer"
             >
               <Image 
                 src="https://i.pinimg.com/736x/f7/ca/02/f7ca0276f84f3a8fcad605d0ea8d5211.jpg" 
