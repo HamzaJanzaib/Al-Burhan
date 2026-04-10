@@ -1,78 +1,119 @@
 "use client";
 import { motion } from "motion/react";
-import { CheckCircle, Clock, Users, Star, ChevronRight } from "lucide-react";
+import { CheckCircle, Clock, Users, Star, BookOpen, Sparkles, GraduationCap } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 const steps = [
-  { num: "01", title: "Arabic Alphabet (Qaida)", desc: "Start from scratch — learn every Arabic letter with its correct sound." },
-  { num: "02", title: "Harakat & Vowel Marks", desc: "Understand Fatha, Kasra, Dhamma and their tanween forms." },
-  { num: "03", title: "Joining Letters", desc: "Learn how letters connect to form words in the Arabic script." },
-  { num: "04", title: "Word by Word Reading", desc: "Build confidence reading individual Quranic words and short phrases." },
-  { num: "05", title: "Page Reading Practice", desc: "Progress to reading complete Quranic pages smoothly and fluently." },
-  { num: "06", title: "Short Surah Completion", desc: "Complete short Surahs (Juz Amma) independently with proper flow." },
+  { num: "01", title: "Basic Arabic Alphabet", desc: "Start from the very beginning by learning the shapes and names of all 28 Arabic letters." },
+  { num: "02", title: "Vowel Signs (Harkat)", desc: "Understand how accents like Fatha, Kasra, and Damma change the sounds of letters." },
+  { num: "03", title: "Word Joining Rules", desc: "Learn how Arabic letters connect to form words and master compound letter sounds." },
+  { num: "04", title: "Fluency Drills", desc: "Practice reading short verses to build speed and accuracy in word recognition." },
+  { num: "05", title: "Full Page Recitation", desc: "Advance to reading entire pages with correct pauses and basic flow." },
+  { num: "06", title: "Reading Mastery", desc: "A final assessment to ensure you can read any portion of the Quran independently." },
 ];
 
 export default function ReadingPage() {
   return (
-    <div className="min-h-screen bg-background">
-      <section className="relative py-28 px-6 bg-linear-to-br from-secondary/5 via-background to-primary/10 overflow-hidden">
-        <div className="absolute -top-20 -right-20 w-80 h-80 bg-secondary/10 rounded-full blur-3xl" />
-        <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-12">
-          <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} className="flex-1">
-            <span className="inline-block px-4 py-1.5 rounded-full bg-secondary/20 text-secondary text-sm font-semibold mb-4">Course</span>
-            <h1 className="text-5xl font-bold text-primary mb-5 leading-tight">
-              Quran <span className="text-secondary">Reading</span>
-            </h1>
-            <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-              A step-by-step beginner program taking students from the Arabic alphabet all the way to fluent Quranic recitation — at their own pace.
-            </p>
-            <div className="flex flex-wrap gap-6 mb-8">
-              {[["Beginners Welcome", <Users size={16} />], ["Flexible Schedule", <Clock size={16} />], ["Certified Tutors", <Star size={16} />]].map(([label, icon]) => (
-                <div key={label} className="flex items-center gap-2 text-sm font-medium text-muted-foreground">
-                  <span className="text-secondary">{icon}</span> {label}
-                </div>
-              ))}
-            </div>
-            <Link href="/enroll" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-primary text-primary-foreground font-bold shadow-lg hover:shadow-primary/40 transition-shadow">
-              Enroll Now <ChevronRight size={16} />
+    <div className="min-h-screen bg-background overflow-hidden pb-20">
+      
+      {/* Hero */}
+      <section className="relative h-[50vh] flex items-center justify-center">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/al-burhan/images/Banner.png"
+            alt="Reading Banner"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-linear-to-r from-secondary/40 via-secondary/20 to-transparent" />
+        </div>
+
+        <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs font-black uppercase tracking-widest mb-6"
+          >
+            <BookOpen size={14} className="text-primary fill-primary" />
+            Start From Basics
+          </motion.div>
+          <motion.h1 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-5xl md:text-7xl font-semibold text-primary-foreground leading-tight mb-4 drop-shadow-2xl"
+          >
+            Quran Reading
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            className="text-primary-foreground/70 text-md font-medium max-w-2xl mx-auto mb-10"
+          >
+            The perfect foundation for beginners. Learn to read the Holy Quran with perfect accuracy 
+            from day one through our patient and structured Nurani Qaida specialized program.
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+          >
+            <Link href="/enroll" className="px-10 py-4 rounded-full bg-primary text-white font-bold shadow-xl hover:scale-105 active:scale-95 transition-all">
+              Book Trial Class
             </Link>
           </motion.div>
-          <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.2 }}
-            className="w-full md:w-80 bg-card rounded-3xl border border-border p-6 shadow-xl"
-          >
-            <h3 className="font-bold text-primary text-lg mb-4">What you'll learn</h3>
-            <ul className="space-y-3">
-              {["Arabic alphabet recognition", "Vowel marks (Harakat)", "Word connection skills", "Fluent page reading", "Short Surah completion", "Foundation for Tajweed"].map((item) => (
-                <li key={item} className="flex items-start gap-2.5 text-sm text-muted-foreground">
-                  <CheckCircle size={16} className="text-secondary shrink-0 mt-0.5" /> {item}
-                </li>
+        </div>
+      </section>
+
+      {/* Curriculum */}
+      <section className="py-24 px-6 max-w-7xl mx-auto">
+        <div className="grid lg:grid-cols-3 gap-12">
+          <div className="lg:col-span-2">
+            <h2 className="text-3xl font-black text-primary mb-8 border-l-4 border-secondary pl-4 uppercase">Fundamental Steps</h2>
+            <div className="grid sm:grid-cols-2 gap-6">
+              {steps.map((step, i) => (
+                <motion.div key={step.num} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
+                  className="group p-8 rounded-[32px] bg-white border border-slate-100 shadow-sm hover:shadow-xl hover:border-secondary/20 transition-all cursor-pointer"
+                >
+                  <span className="block text-4xl font-black text-secondary/10 group-hover:text-primary/20 transition-colors mb-4">{step.num}</span>
+                  <h3 className="text-xl font-bold text-slate-900 group-hover:text-secondary transition-colors mb-2">{step.title}</h3>
+                  <p className="text-slate-500 text-sm leading-relaxed">{step.desc}</p>
+                </motion.div>
               ))}
-            </ul>
-          </motion.div>
+            </div>
+          </div>
+
+          <div className="space-y-8">
+            <div className="p-10 rounded-[40px] bg-secondary text-primary relative overflow-hidden shadow-2xl">
+              <h3 className="text-2xl font-black mb-8 relative z-10">Why This Course?</h3>
+              <ul className="space-y-6 relative z-10">
+                {["Step-by-Step Guidance", "Interactive Lessons", "Certified Native Tutors", "Weekly Progress Tracking", "Lifetime Reading Skills"].map(item => (
+                  <li key={item} className="flex items-start gap-3 group">
+                    <CheckCircle size={20} className="text-primary shrink-0" />
+                    <span className="text-sm font-bold text-primary/80 group-hover:text-primary transition-colors">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="p-10 rounded-[40px] border-2 border-slate-100 bg-slate-50/50">
+              <div className="w-16 h-16 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mb-6"> <GraduationCap size={32} /> </div>
+              <h3 className="text-xl font-bold text-slate-900 mb-4">Start Strong</h3>
+              <p className="text-slate-500 text-sm mb-8 leading-relaxed"> Our Nazra program ensures that you build a lifetime of correct recitation through patient, professional tutoring. </p>
+              <Link href="/enroll" className="inline-flex items-center gap-2 font-black text-primary hover:text-secondary transition-colors group"> Enroll Now <span>→</span> </Link>
+            </div>
+          </div>
         </div>
       </section>
-      <section className="py-20 px-6 max-w-4xl mx-auto">
-        <h2 className="text-3xl font-bold text-primary text-center mb-12">Course Curriculum</h2>
-        <div className="space-y-4">
-          {steps.map((step, i) => (
-            <motion.div key={step.num} initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }}
-              className="flex items-start gap-5 bg-card rounded-2xl p-5 border border-border hover:border-primary/20 hover:shadow-md transition-all cursor-pointer"
-            >
-              <span className="text-3xl font-black text-primary/20 shrink-0">{step.num}</span>
-              <div>
-                <h3 className="font-bold text-primary mb-1">{step.title}</h3>
-                <p className="text-sm text-muted-foreground">{step.desc}</p>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </section>
-      <section className="py-16 px-6 text-center bg-muted/30">
-        <h2 className="text-3xl font-bold text-primary mb-4">Begin Your Quran Journey</h2>
-        <p className="text-muted-foreground mb-8">It's never too late to start reading the Quran. Join us today.</p>
-        <Link href="/enroll" className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-primary text-primary-foreground font-bold shadow-lg hover:shadow-primary/40 transition-shadow">
-          Book Free Trial →
-        </Link>
+
+      {/* CTA */}
+      <section className="px-6">
+         <div className="max-w-4xl mx-auto rounded-[40px] bg-linear-to-br from-secondary to-orange-400 p-12 text-center text-primary shadow-2xl">
+           <h2 className="text-3xl md:text-5xl font-black mb-6 italic">Master Quranic Fluency</h2>
+           <p className="text-primary/70 mb-10 max-w-lg mx-auto font-bold">Foundation is key. Join our reading mastering program and read like a pro.</p>
+           <Link href="/enroll" className="inline-block px-10 py-5 rounded-full bg-primary text-white font-black text-lg hover:scale-105 transition-all shadow-xl">Start Trial Now</Link>
+         </div>
       </section>
     </div>
   );

@@ -45,7 +45,7 @@ export default async function RootLayout({ children, params }) {
             <HeaderProvider>
               <div className="max-w-screen overflow-x-hidden">
                 <Header />
-                <main className="max-w-screen overflow-x-hidden pt-20 bg-background min-h-screen">
+                <main className="max-w-screen overflow-x-hidden pt-24 bg-background min-h-screen">
                   {children}
                 </main>
                 <Footer />
