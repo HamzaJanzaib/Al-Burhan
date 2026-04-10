@@ -1,12 +1,11 @@
 "use client";
-import { HeaderProvider, useHeader } from "../../../context/HeaderContext";
-import HeaderLogo from "./HeaderLogo";
-import DesktopNav from "./DesktopNav";
-import AuthButtons from "./AuthButtons";
-import MobileMenu from "./MobileMenu";
-import LanguageSwitcher from "./LanguageSwitcher";
+import { useHeader } from "../../../context/HeaderContext";
 import AnnouncementBar from "./AnnouncementBar";
-import TopInfoBar from "./TopInfoBar";
+import AuthButtons from "./AuthButtons";
+import DesktopNav from "./DesktopNav";
+import HeaderLogo from "./HeaderLogo";
+import LanguageSwitcher from "./LanguageSwitcher";
+import MobileMenu from "./MobileMenu";
 
 export default function Header() {
   const { isScrolled } = useHeader();
@@ -20,7 +19,6 @@ export default function Header() {
       }`}
     >
       <AnnouncementBar />
-      {/* <TopInfoBar /> */}
 
       <div className="container mx-auto flex items-center px-2 lg:px-6 h-20">
         <HeaderLogo />
@@ -28,9 +26,9 @@ export default function Header() {
 
         <div className="flex-1 flex justify-end items-center gap-3">
           <AuthButtons />
-          {/* <div className="hidden lg:block">
+          <div className="hidden lg:block">
             <LanguageSwitcher />
-          </div> */}
+          </div>
           <MobileMenu />
         </div>
       </div>

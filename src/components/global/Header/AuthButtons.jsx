@@ -73,7 +73,7 @@ const AuthButtons = () => {
           >
             <Link
               href="/enroll"
-              className="bg-gradient-to-r from-(--color-primary) to-(--color-secondary) hover:from-(--hover-primary)  text-white px-6 py-3 rounded-full font-semibold shadow-lg transition-all flex items-center"
+              className="bg-linear-to-r from-primary to-primary/80 text-primary-foreground px-6 py-3 rounded-full font-semibold shadow-lg transition-all flex items-center"
             >
               <span>{t("enroll_now")}</span>
               <ChevronRight size={18} className="ml-.5" />
