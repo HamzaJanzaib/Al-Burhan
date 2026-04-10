@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "motion/react";
-import { ChevronDown, ChevronRight, MapPin, Sparkles } from "lucide-react";
+import { ChevronDown, ChevronRight, Mail, Sparkles } from "lucide-react";
 import { useHeader } from "@/context/HeaderContext";
 import { useTranslation } from "react-i18next";
 import { useServices } from "@/context/ServicesContext";
@@ -30,9 +30,9 @@ const DesktopNav = () => {
       })),
     },
     {
-      name: t("nav.online_classes"),
-      href: "/enroll",
-      icon: <MapPin size={18} />,
+      name: t("nav.contact"),
+      href: "/contact",
+      icon: <Mail size={18} />,
     },
   ];
 

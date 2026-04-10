@@ -33,7 +33,7 @@
         "home": "Home",
         "about": "About",
         "services": "Courses",
-        "online_classes": "Online Classes"
+        "contact": "Contact Us"
     },
     "service": {
         "tajweed_al_quran": {
@@ -122,5 +122,22 @@
     "toast": {
         "load_error": "Failed to load Academy data",
         "appointment_booked_success": "Booking request sent successfully! We will contact you soon."
+    },
+    "contact_page": {
+        "title": "Contact Us",
+        "subtitle": "Get in Touch",
+        "description": "Have questions about our courses or admissions? Our team is here to guide you.",
+        "info": {
+            "support": "Student Support",
+            "admissions": "Admissions",
+            "office": "Main Office",
+            "hours": "Working Hours",
+            "days": "Mon - Sun, 24/7 (Online)"
+        },
+        "form": {
+            "title": "Send a Message",
+            "success": "Message sent successfully!",
+            "error": "Failed to send message."
+        }
     }
 }

@@ -9,7 +9,7 @@ import {
   User,
   LogOut,
   Calendar,
-  MapPin,
+  Mail,
   ChevronRight,
 } from "lucide-react";
 import { useHeader } from "@/context/HeaderContext";
@@ -57,9 +57,9 @@ const MobileMenu = () => {
       })),
     },
     {
-      name: t("nav.online_classes"),
-      href: "/enroll",
-      icon: <MapPin size={18} />,
+      name: t("nav.contact"),
+      href: "/contact",
+      icon: <Mail size={18} />,
     },
   ];
 
