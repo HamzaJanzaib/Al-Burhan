@@ -57,7 +57,7 @@ const HeroSection = () => {
 
           <motion.h1
             variants={fadeInUp}
-            className="text-5xl lg:text-7xl font-bold text-slate-900 leading-[1.1] mb-6"
+            className="text-5xl lg:text-6xl font-bold text-foreground leading-[1.1] mb-6"
           >
             Illuminate Your Heart <br />
             with the{" "}
@@ -141,7 +141,7 @@ const HeroSection = () => {
             className="relative z-0 rounded-[40px] overflow-hidden shadow-2xl aspect-4/5 lg:aspect-square"
           >
             <Image
-              src="/al-burhan/images/1.png"
+              src="https://i.pinimg.com/1200x/11/e2/e1/11e2e1332e440a51df0e47b4ff9d2d99.jpg"
               alt="Quran Academy Hero"
               fill
               className="object-cover"
@@ -154,7 +154,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.6, duration: 0.8 }}
-            className="absolute -bottom-10 -left-10 lg:-left-20 z-20 bg-background p-6 rounded-3xl border border-slate-100 shadow-2xl flex items-center gap-4"
+            className="absolute -bottom-10 -left-10 lg:-left-20 z-20 bg-background p-6 rounded-3xl border border-border flex items-center gap-4"
           >
             <div className="w-12 h-12 bg-secondary/20 rounded-2xl flex items-center justify-center text-secondary">
               <GraduationCap size={28} />

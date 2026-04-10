@@ -3,6 +3,8 @@ import { motion } from "motion/react";
 import { BookOpen, Users, Globe, Award, Star, Heart } from "lucide-react";
 import Link from "next/link";
 import AboutStatsSection from "@/components/global/home/opportunitiesSec";
+import HeroSection from "@/components/global/home/AboutHero";
+import LearningNewsSection from "@/components/global/home/LearningNews";
 
 const values = [
   {
@@ -30,46 +32,10 @@ const values = [
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-background overflow-hidden">
-      {/* Hero */}
-      <section className="relative py-32 px-6 text-center bg-linear-to-br from-primary/10 via-background to-secondary/10 overflow-hidden">
-        <div className="absolute -top-20 -left-20 w-96 h-96 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute -bottom-20 -right-20 w-96 h-96 bg-secondary/10 rounded-full blur-3xl pointer-events-none" />
-        <div className="relative max-w-4xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/5 border border-primary/20 text-primary text-xs font-black uppercase tracking-widest mb-6"
-          >
-            <Star size={14} className="text-secondary fill-secondary" />
-            Empowering Through Knowledge
-          </motion.div>
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="text-5xl md:text-7xl font-black text-slate-900 leading-tight mb-8"
-          >
-            About <span className="text-primary italic">AL Burhan</span> <br />{" "}
-            Quran Academy
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="text-slate-600 text-xl leading-relaxed font-medium max-w-3xl mx-auto"
-          >
-            AL Burhan Quran Academy is a global sanctuary for Islamic learning.
-            We are dedicated to spreading the divine light of the Holy Quran
-            through authentic knowledge, certified expertise, and modern digital
-            excellence.
-          </motion.p>
-        </div>
-      </section>
+      <HeroSection />
 
-      {/* 2. About Stats Section (Modernized Component) */}
       <AboutStatsSection />
 
-      {/* Our Values */}
       <section className="py-24 px-6 bg-primary/2">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
@@ -105,6 +71,8 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      <LearningNewsSection />
 
       {/* CTA */}
       <section className="py-24 px-6 text-center bg-primary">

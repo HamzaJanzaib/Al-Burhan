@@ -96,7 +96,7 @@ const AboutStatsSection = () => {
             <div className="absolute -top-6 -right-6 w-full h-full border-2 border-primary/20 rounded-[40px] -z-10 group-hover:translate-x-3 group-hover:-translate-y-3 transition-transform duration-700" />
             <div className="relative aspect-4/5 md:aspect-square overflow-hidden rounded-[40px] shadow-2xl border border-white">
               <Image
-                src="/al-burhan/Logo/WEBP/al-burhan-full.webp"
+                src="https://i.pinimg.com/736x/35/30/6c/35306c28e77781a4409b17847336fd75.jpg"
                 alt="Student Reciting"
                 fill
                 className="object-cover transition-transform duration-1000 group-hover:scale-105"
@@ -221,7 +221,7 @@ const AboutStatsSection = () => {
               >
                 <div className="absolute inset-0 bg-primary/20 group-hover:bg-transparent transition-colors z-10" />
                 <Image
-                  src="/al-burhan/Logo/WEBP/al-burhan-full.webp"
+                  src="https://i.pinimg.com/736x/02/75/24/02752438f878404c1a73aa252dabf0f3.jpg"
                   alt="Join Us"
                   fill
                   className="object-cover transition-transform duration-1000 group-hover:scale-110"
