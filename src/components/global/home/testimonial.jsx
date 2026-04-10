@@ -86,27 +86,54 @@ const TestimonialsSection = () => {
   };
 
   return (
-    <section className="w-full bg-primary/5 py-12 md:py-20 px-6 lg:px-16 overflow-hidden">
-      <div className="max-w-7xl mx-auto">
+    <section className="relative w-full bg-background py-12 px-6 lg:px-16 overflow-hidden">
+      {/* Decorative Background Elements */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-secondary/10 rounded-full blur-[100px] pointer-events-none" />
+      
+      {/* Animated floating icons/shapes */}
+      <motion.div 
+        animate={{ 
+          y: [0, -20, 0],
+          rotate: [0, 10, 0]
+        }}
+        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute top-20 left-10 text-primary/10 hidden lg:block"
+      >
+        <Star size={40} />
+      </motion.div>
+      <motion.div 
+        animate={{ 
+          y: [0, 20, 0],
+          rotate: [0, -10, 0]
+        }}
+        transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute bottom-20 right-10 text-secondary/10 hidden lg:block"
+      >
+        <Quote size={60} />
+      </motion.div>
+
+      <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
         <div className="text-center mb-16">
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 border border-primary/20 bg-primary/10 rounded-full mb-4"
+            className="inline-flex items-center gap-2 px-5 py-2 bg-primary/5 border border-primary/10 rounded-full mb-6"
           >
-            <Star size={14} className="text-secondary fill-secondary" />
-            <span className="text-xs font-bold text-primary uppercase tracking-widest">
-              Testimonials
+            <Star size={14} className="text-secondary fill-secondary animate-pulse" />
+            <span className="text-xs font-black text-primary uppercase tracking-[0.2em]">
+              Blessed Community
             </span>
           </motion.div>
-          <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
-            Voices From Our Blessed Community
+          <h2 className="text-4xl md:text-6xl font-black text-slate-900 mb-6 leading-tight">
+            Voices of <span className="text-primary italic">Transformation</span>
           </h2>
-          <p className="text-slate-600 max-w-2xl mx-auto">
-            See what our students and parents say about their journey towards
-            Quranic excellence.
+          <div className="w-24 h-1.5 bg-secondary mx-auto mb-8 rounded-full" />
+          <p className="text-slate-500 max-w-2xl mx-auto text-lg font-medium">
+            Join thousands of students who have embarked on a journey of clarity, 
+            connection, and Quranic excellence.
           </p>
         </div>
 
@@ -123,32 +150,34 @@ const TestimonialsSection = () => {
               key={item.id}
               variants={cardVariants}
               whileHover={{
-                y: -10,
-                backgroundColor: "#0d5c5c",
-                transition: { duration: 0.1 },
+                y: -15,
+                transition: { duration: 0.4, ease: [0.16, 1, 0.3, 1] },
               }}
-              className={`group relative p-8 rounded-[32px] shadow-sm flex flex-col justify-between border border-slate-100 bg-background transition-all duration-300 hover:shadow-2xl hover:shadow-primary/20 cursor-pointer ${
+              className={`group relative p-10 rounded-[40px] shadow-sm flex flex-col justify-between border border-slate-100 bg-background transition-all duration-500 hover:shadow-[0_40px_80px_rgba(13,92,92,0.12)] hover:bg-primary hover:border-primary cursor-pointer overflow-hidden ${
                 index < 2 ? "md:col-span-3" : "md:col-span-2"
               }`}
             >
-              <div>
+              {/* Card Background Decoration */}
+              <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -mr-16 -mt-16 group-hover:bg-white/10 transition-colors duration-500" />
+              
+              <div className="relative z-10">
                 <Quote
-                  size={40}
-                  className="mb-6 opacity-20 text-primary group-hover:text-secondary group-hover:opacity-60 transition-colors duration-300"
+                  size={48}
+                  className="mb-8 opacity-10 text-primary group-hover:text-secondary group-hover:opacity-100 transition-all duration-500 transform group-hover:-rotate-12"
                 />
 
-                <h3 className="text-xl font-bold mb-4 text-slate-900 group-hover:text-secondary transition-colors duration-300">
+                <h3 className="text-2xl font-bold mb-5 text-slate-900 group-hover:text-white transition-colors duration-300">
                   {item.title}
                 </h3>
 
-                <p className="text-base leading-relaxed mb-8 text-slate-600 group-hover:text-white/90 transition-colors duration-300 font-light">
+                <p className="text-lg leading-relaxed mb-10 text-slate-500 group-hover:text-white/80 transition-colors duration-300 font-medium italic">
                   &quot;{item.content}&quot;
                 </p>
               </div>
 
-              <div className="flex items-center justify-between mt-auto">
-                <div className="flex items-center gap-4">
-                  <div className="relative w-12 h-12 rounded-full overflow-hidden bg-slate-200 border-2 border-white shadow-sm group-hover:border-secondary/30 transition-colors duration-300">
+              <div className="relative z-10 flex items-center justify-between mt-auto">
+                <div className="flex items-center gap-5">
+                  <div className="relative w-14 h-14 rounded-2xl overflow-hidden border-2 border-white shadow-xl group-hover:border-secondary transition-all duration-300 transform group-hover:scale-110">
                     <Image
                       src={`https://i.pravatar.cc/150?u=${item.id + 10}`}
                       alt={item.author}
@@ -157,16 +186,16 @@ const TestimonialsSection = () => {
                     />
                   </div>
                   <div>
-                    <p className="font-bold text-sm leading-none text-slate-900 group-hover:text-white transition-colors duration-300">
+                    <p className="font-black text-base leading-none text-slate-900 group-hover:text-white transition-colors duration-300">
                       {item.author}
                     </p>
-                    <p className="text-xs mt-1 text-primary font-medium group-hover:text-secondary transition-colors duration-300">
+                    <p className="text-xs mt-2 text-primary font-bold uppercase tracking-wider group-hover:text-secondary transition-colors duration-300">
                       {item.role}
                     </p>
                   </div>
                 </div>
 
-                <div className="flex gap-0.5">
+                <div className="flex gap-1 bg-primary/5 p-2 rounded-full px-3 group-hover:bg-white/10 transition-colors duration-300">
                   {[...Array(item.rating)].map((_, i) => (
                     <motion.div
                       key={i}
@@ -178,14 +207,12 @@ const TestimonialsSection = () => {
                     >
                       <Star
                         size={14}
-                        className="fill-secondary text-secondary group-hover:fill-white group-hover:text-white transition-colors duration-300 cursor-pointer"
+                        className="fill-secondary text-secondary"
                       />
                     </motion.div>
                   ))}
                 </div>
               </div>
-
-              <div className="absolute bottom-6 right-6 w-24 h-24 bg-primary/5 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             </motion.div>
           ))}
         </motion.div>
