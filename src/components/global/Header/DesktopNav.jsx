@@ -98,10 +98,10 @@ const DesktopNav = () => {
                       isRTL ? "right-0" : "left-0"
                     } mt-1 pt-2 z-50`}
                   >
-                    <div className="w-[500px] bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-gray-100 overflow-hidden ring-1 ring-black/5">
+                    <div className="w-[500px] bg-background/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-gray-100 overflow-hidden ring-1 ring-black/5">
                       {/* Dropdown Header Accent */}
                       <div className="h-1.5 bg-linear-to-r from-primary via-secondary to-primary/80"></div>
-                      
+
                       <div className="p-4 grid grid-cols-2 gap-3">
                         {item.subItems.map((sub, sIdx) => (
                           <motion.div
@@ -120,7 +120,10 @@ const DesktopNav = () => {
                               <div className="flex-1">
                                 <h4 className="text-sm font-bold text-gray-800 group-hover:text-primary transition-colors flex items-center">
                                   {sub.name}
-                                  <ChevronRight size={12} className={`ml-1 opacity-0 group-hover:opacity-100 transition-all ${isRTL ? 'rotate-180' : ''}`} />
+                                  <ChevronRight
+                                    size={12}
+                                    className={`ml-1 opacity-0 group-hover:opacity-100 transition-all ${isRTL ? "rotate-180" : ""}`}
+                                  />
                                 </h4>
                                 {sub.description && (
                                   <p className="text-[11px] text-gray-500 mt-0.5 line-clamp-1 leading-tight">
@@ -138,7 +141,10 @@ const DesktopNav = () => {
                         <span className="text-[11px] font-medium text-gray-400 italic">
                           Start your spiritual journey today
                         </span>
-                        <Link href="/enroll" className="text-xs font-bold text-primary hover:underline flex items-center gap-1">
+                        <Link
+                          href="/enroll"
+                          className="text-xs font-bold text-primary hover:underline flex items-center gap-1"
+                        >
                           Enroll Now <ChevronRight size={12} />
                         </Link>
                       </div>

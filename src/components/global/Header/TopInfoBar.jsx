@@ -65,7 +65,7 @@ const TopInfoBar = () => {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-7 h-7 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 text-white transition-all duration-300"
+                    className="w-7 h-7 flex items-center justify-center rounded-full bg-background/10 hover:bg-background/20 text-white transition-all duration-300"
                   >
                     {social.icon}
                   </Link>
@@ -77,13 +77,13 @@ const TopInfoBar = () => {
             <div className="flex items-center gap-2">
               <Link
                 href="/login"
-                className="px-4 py-1.5 rounded-full border border-white/20 hover:bg-white/10 transition-colors text-[10px] font-bold"
+                className="px-4 py-1.5 rounded-full border border-white/20 hover:bg-background/10 transition-colors text-[10px] font-bold"
               >
                 Login
               </Link>
               <Link
                 href="/signup"
-                className="px-4 py-1.5 rounded-full bg-white text-[#0b315b] font-extrabold hover:bg-gray-100 transition-all shadow-sm text-[10px]"
+                className="px-4 py-1.5 rounded-full bg-background text-[#0b315b] font-extrabold hover:bg-gray-100 transition-all shadow-sm text-[10px]"
               >
                 Sign Up
               </Link>

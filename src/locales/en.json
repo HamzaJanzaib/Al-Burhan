@@ -91,5 +91,36 @@
                 "reward": "Certificates & Rewards"
             }
         }
+    },
+    "contact_section": {
+        "booking_form": {
+            "title": "Academy Enrollment",
+            "button": {
+                "bookNow": "Book Now"
+            },
+            "fields": {
+                "hello!": "Hello!",
+                "nologinrequired": "Feel free to book your appointment — no login required.",
+                "loggedinwith": "Logged in as",
+                "name": "Full Name",
+                "email": "Email Address",
+                "phone": "Phone Number",
+                "preferredDate": "Preferred Date",
+                "serviceVariant": "Select a Service",
+                "additionalNotes": "Additional Notes"
+            },
+            "errors": {
+                "name": "Full Name is required",
+                "email": "Email Address is required",
+                "phone": "Phone Number is required",
+                "preferredDate": "Please select a date",
+                "service_id": "Please select a course",
+                "submit": "Failed to submit booking. Please try again."
+            }
+        }
+    },
+    "toast": {
+        "load_error": "Failed to load Academy data",
+        "appointment_booked_success": "Booking request sent successfully! We will contact you soon."
     }
 }

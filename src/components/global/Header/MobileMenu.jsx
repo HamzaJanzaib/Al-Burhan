@@ -45,7 +45,6 @@ const MobileMenu = () => {
   };
 
   const navItems = [
-
     { name: t("nav.home"), href: "/" },
     { name: t("nav.about"), href: "/about" },
     {
@@ -67,25 +66,29 @@ const MobileMenu = () => {
   // Motion variants for staggered entry
   const menuVariants = {
     hidden: { x: isRTL ? "-100%" : "100%" },
-    visible: { 
+    visible: {
       x: 0,
-      transition: { 
+      transition: {
         type: "spring",
         stiffness: 300,
         damping: 30,
         when: "beforeChildren",
-        staggerChildren: 0.05
-      }
+        staggerChildren: 0.05,
+      },
     },
-    exit: { 
+    exit: {
       x: isRTL ? "-100%" : "100%",
-      transition: { duration: 0.3, ease: "easeInOut" }
-    }
+      transition: { duration: 0.3, ease: "easeInOut" },
+    },
   };
 
   const itemVariants = {
     hidden: { opacity: 0, x: isRTL ? -20 : 20 },
-    visible: { opacity: 1, x: 0, transition: { type: "spring", stiffness: 300, damping: 24 } }
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { type: "spring", stiffness: 300, damping: 24 },
+    },
   };
 
   return (
@@ -117,7 +120,7 @@ const MobileMenu = () => {
             />
 
             <motion.div
-              className={`fixed top-0 ${isRTL ? "left-0" : "right-0"} w-full md:w-[400px] h-screen z-50 flex flex-col bg-white/95 backdrop-blur-xl border-l border-primary/10`}
+              className={`fixed top-0 ${isRTL ? "left-0" : "right-0"} w-full md:w-[400px] h-screen z-50 flex flex-col bg-background/95 backdrop-blur-xl border-l border-primary/10`}
               variants={menuVariants}
               initial="hidden"
               animate="visible"
@@ -127,7 +130,7 @@ const MobileMenu = () => {
               {/* Top gradient accent */}
               <div className="h-1.5 bg-linear-to-r from-primary via-secondary to-primary/80"></div>
 
-              <div className="flex items-center justify-between px-6 py-5 border-b border-gray-100 bg-white/50">
+              <div className="flex items-center justify-between px-6 py-5 border-b border-gray-100 bg-background/50">
                 <Link href="/" onClick={() => setMobileMenuOpen(false)}>
                   <div className="flex items-center gap-3">
                     <div className="bg-primary/5 p-1 rounded-full border border-primary/10 shadow-sm">
@@ -161,15 +164,24 @@ const MobileMenu = () => {
               <div className="flex-1 overflow-y-auto p-6 scrollbar-hide flex flex-col">
                 <nav className="flex flex-col space-y-1 mb-8">
                   {navItems.map((item, i) => {
-                    const hasSubMenu = item.subItems && item.subItems.length > 0;
+                    const hasSubMenu =
+                      item.subItems && item.subItems.length > 0;
                     const isExpanded = expandedMobileItem === item.name;
 
                     return (
-                      <motion.div key={item.name} variants={itemVariants} className="flex flex-col">
+                      <motion.div
+                        key={item.name}
+                        variants={itemVariants}
+                        className="flex flex-col"
+                      >
                         {hasSubMenu ? (
                           <>
                             <button
-                              onClick={() => setExpandedMobileItem(isExpanded ? null : item.name)}
+                              onClick={() =>
+                                setExpandedMobileItem(
+                                  isExpanded ? null : item.name,
+                                )
+                              }
                               className={`py-3.5 px-4 rounded-xl text-[15px] font-semibold transition-all flex items-center justify-between group w-full text-left outline-none cursor-pointer ${
                                 isExpanded
                                   ? "bg-primary/10 text-primary border border-primary/20"
@@ -177,10 +189,16 @@ const MobileMenu = () => {
                               }`}
                             >
                               <span className="flex items-center gap-2">
-                                {item.icon && <span className="text-secondary">{item.icon}</span>}
+                                {item.icon && (
+                                  <span className="text-secondary">
+                                    {item.icon}
+                                  </span>
+                                )}
                                 {item.name}
                               </span>
-                              <div className={`p-1.5 rounded-md transition-colors ${isExpanded ? "bg-primary/10 text-primary" : "bg-gray-100 text-gray-400 group-hover:bg-primary/5 group-hover:text-primary"}`}>
+                              <div
+                                className={`p-1.5 rounded-md transition-colors ${isExpanded ? "bg-primary/10 text-primary" : "bg-gray-100 text-gray-400 group-hover:bg-primary/5 group-hover:text-primary"}`}
+                              >
                                 <ChevronDown
                                   size={14}
                                   className={`transition-transform duration-300 ${isExpanded ? "rotate-180" : ""}`}
@@ -200,14 +218,22 @@ const MobileMenu = () => {
                                       <Link
                                         key={sub.name}
                                         href={sub.href}
-                                        target={sub.href.startsWith("http") ? "_blank" : undefined}
-                                        rel={sub.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                                        target={
+                                          sub.href.startsWith("http")
+                                            ? "_blank"
+                                            : undefined
+                                        }
+                                        rel={
+                                          sub.href.startsWith("http")
+                                            ? "noopener noreferrer"
+                                            : undefined
+                                        }
                                         onClick={() => setMobileMenuOpen(false)}
                                         className="relative group py-2.5 px-3 rounded-lg text-sm font-medium text-gray-600 hover:text-primary hover:bg-primary/5 transition-colors flex items-center gap-3 overflow-hidden"
                                       >
                                         <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-secondary scale-y-0 group-hover:scale-y-100 transition-transform origin-top"></div>
                                         {sub.icon && (
-                                          <span className="text-primary/60 group-hover:text-primary transition-colors p-1.5 bg-gray-50 group-hover:bg-white rounded-md border border-gray-100 group-hover:border-primary/20 shadow-sm">
+                                          <span className="text-primary/60 group-hover:text-primary transition-colors p-1.5 bg-gray-50 group-hover:bg-background rounded-md border border-gray-100 group-hover:border-primary/20 shadow-sm">
                                             {sub.icon}
                                           </span>
                                         )}
@@ -226,7 +252,11 @@ const MobileMenu = () => {
                             className="py-3.5 px-4 rounded-xl text-[15px] font-semibold text-gray-700 hover:bg-gray-50 hover:text-primary transition-all flex items-center justify-between group active:scale-95 outline-none border border-transparent hover:border-gray-100 cursor-pointer"
                           >
                             <span className="flex items-center gap-2">
-                              {item.icon && <span className="text-primary/70">{item.icon}</span>}
+                              {item.icon && (
+                                <span className="text-primary/70">
+                                  {item.icon}
+                                </span>
+                              )}
                               {item.name}
                             </span>
                           </Link>
@@ -258,12 +288,18 @@ const MobileMenu = () => {
                           </div>
                         </div>
                         <div className="grid grid-cols-2 gap-2.5 relative z-10">
-                          <Link href="/profile" onClick={() => setMobileMenuOpen(false)}>
-                            <button className="w-full py-2.5 rounded-xl bg-white border border-gray-200 text-gray-700 font-semibold text-xs hover:border-primary hover:text-primary transition-colors flex items-center justify-center gap-1.5 shadow-sm active:scale-95">
+                          <Link
+                            href="/profile"
+                            onClick={() => setMobileMenuOpen(false)}
+                          >
+                            <button className="w-full py-2.5 rounded-xl bg-background border border-gray-200 text-gray-700 font-semibold text-xs hover:border-primary hover:text-primary transition-colors flex items-center justify-center gap-1.5 shadow-sm active:scale-95">
                               <User size={14} /> {t("profile.view_profile")}
                             </button>
                           </Link>
-                          <Link href="/book" onClick={() => setMobileMenuOpen(false)}>
+                          <Link
+                            href="/book"
+                            onClick={() => setMobileMenuOpen(false)}
+                          >
                             <button className="w-full py-2.5 rounded-xl bg-primary text-white font-semibold text-xs shadow-md hover:bg-primary/90 transition-colors flex items-center justify-center gap-1.5 active:scale-95">
                               <Calendar size={14} /> {t("book_now")}
                             </button>
@@ -292,22 +328,26 @@ const MobileMenu = () => {
                             onClick={() => setMobileMenuOpen(false)}
                             className="relative group bg-linear-to-r from-primary via-primary/90 to-primary text-white px-6 py-4 rounded-2xl font-bold shadow-xl shadow-primary/20 transition-all flex items-center justify-between text-base overflow-hidden"
                           >
-                            <div className="absolute inset-0 bg-white/10 mix-blend-overlay"></div>
+                            <div className="absolute inset-0 bg-background/10 mix-blend-overlay"></div>
                             <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out"></div>
-                            
+
                             <span className="relative z-10 flex items-center gap-2">
-                              <span className="bg-white/20 p-1.5 rounded-lg backdrop-blur-sm">
+                              <span className="bg-background/20 p-1.5 rounded-lg backdrop-blur-sm">
                                 <Calendar size={18} />
                               </span>
                               {t("enroll_now")}
                             </span>
-                            <span className="relative z-10 w-8 h-8 rounded-full bg-white/20 flex items-center justify-center backdrop-blur-sm group-hover:bg-white group-hover:text-primary transition-colors">
-                              <ChevronRight size={18} className={isRTL ? "rotate-180" : ""} />
+                            <span className="relative z-10 w-8 h-8 rounded-full bg-background/20 flex items-center justify-center backdrop-blur-sm group-hover:bg-background group-hover:text-primary transition-colors">
+                              <ChevronRight
+                                size={18}
+                                className={isRTL ? "rotate-180" : ""}
+                              />
                             </span>
                           </Link>
                         </motion.div>
                         <p className="text-center text-[11px] text-gray-500 mt-3 font-medium">
-                          Start your Quran journey today with expert academic tutors.
+                          Start your Quran journey today with expert academic
+                          tutors.
                         </p>
                       </div>
                     )}

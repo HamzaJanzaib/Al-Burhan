@@ -77,7 +77,10 @@ const AuthButtons = () => {
 
               <Sparkles size={14} className="relative z-10 animate-pulse" />
               <span className="relative z-10">{t("enroll_now")}</span>
-              <ChevronRight size={15} className="relative z-10 group-hover:translate-x-0.5 transition-transform" />
+              <ChevronRight
+                size={15}
+                className="relative z-10 group-hover:translate-x-0.5 transition-transform"
+              />
             </Link>
           </motion.div>
         </div>
@@ -121,9 +124,17 @@ const AuthButtons = () => {
                 <div className="relative w-10 h-10 flex items-center justify-center rounded-full bg-linear-to-br from-primary to-secondary text-primary-foreground font-bold text-base shadow-md border-2 border-white overflow-hidden">
                   {(() => {
                     if (typeof window !== "undefined" && user?.id) {
-                      const storedImg = localStorage.getItem(`profile_image_${user.id}`);
+                      const storedImg = localStorage.getItem(
+                        `profile_image_${user.id}`,
+                      );
                       if (storedImg)
-                        return <img src={storedImg} alt="Avatar" className="w-full h-full object-cover" />;
+                        return (
+                          <img
+                            src={storedImg}
+                            alt="Avatar"
+                            className="w-full h-full object-cover"
+                          />
+                        );
                     }
                     return getFirstLetter();
                   })()}
@@ -139,7 +150,7 @@ const AuthButtons = () => {
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, y: 10, scale: 0.95 }}
                   transition={{ type: "spring", stiffness: 300, damping: 24 }}
-                  className="absolute right-0 mt-3 w-60 rounded-2xl shadow-2xl bg-white/95 backdrop-blur-xl border border-gray-100 overflow-hidden z-50"
+                  className="absolute right-0 mt-3 w-60 rounded-2xl shadow-2xl bg-background/95 backdrop-blur-xl border border-gray-100 overflow-hidden z-50"
                 >
                   {/* Gradient top bar */}
                   <div className="h-1 bg-linear-to-r from-primary via-secondary to-primary/80" />
@@ -150,7 +161,9 @@ const AuthButtons = () => {
                     style={{
                       backgroundImage: (() => {
                         if (typeof window !== "undefined" && user?.id) {
-                          const banner = localStorage.getItem(`banner_image_${user.id}`);
+                          const banner = localStorage.getItem(
+                            `banner_image_${user.id}`,
+                          );
                           return banner ? `url(${banner})` : undefined;
                         }
                       })(),
