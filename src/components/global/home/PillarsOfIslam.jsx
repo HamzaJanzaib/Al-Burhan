@@ -152,16 +152,22 @@ export default function PillarsOfIslam() {
               <motion.div
                 key={pillar.id}
                 variants={itemVariants}
+                whileHover={{ y: -10 }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 className="flex flex-col items-center group cursor-pointer"
               >
                 {/* Circle Container */}
-                <div className="relative w-36 h-36 md:w-32 md:h-32 lg:w-40 lg:h-40 rounded-full border-2 border-white/20 bg-background/10 backdrop-blur-md flex items-center justify-center mb-6 group-hover:border-secondary transition-all duration-500 group-hover:shadow-[0_0_30px_rgba(204,255,0,0.3)]">
+                <motion.div 
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 15 }}
+                  className="relative w-36 h-36 md:w-32 md:h-32 lg:w-40 lg:h-40 rounded-full border-2 border-white/20 bg-background/10 backdrop-blur-md flex items-center justify-center mb-6 group-hover:border-secondary transition-all duration-500 group-hover:shadow-[0_0_30px_rgba(204,255,0,0.3)]"
+                >
                   {/* Subtle Inner Glow on Hover */}
                   <div className="absolute inset-0 rounded-full bg-secondary/0 group-hover:bg-secondary/20 transition-all duration-500" />
                   
                   {/* Icon */}
-                  <pillar.icon className="text-4xl lg:text-5xl text-primary-foreground group-hover:text-white transition-colors duration-300 relative z-10 group-hover:-translate-y-1 transform ease-out" />
-                </div>
+                  <pillar.icon className="text-4xl lg:text-5xl text-primary-foreground group-hover:text-white transition-colors duration-300 relative z-10" />
+                </motion.div>
 
                 {/* Text Content */}
                 <h3 className="text-xl lg:text-2xl font-serif text-primary-foreground mb-1 group-hover:text-white transition-colors duration-300">

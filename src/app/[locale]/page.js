@@ -4,6 +4,7 @@ import TestimonialsSection from "@/components/global/home/testimonial";
 import AboutStatsSection from "@/components/global/home/opportunitiesSec";
 import LearningNewsSection from "@/components/global/home/LearningNews";
 import PillarsOfIslam from "@/components/global/home/PillarsOfIslam";
+import MarqueeSection from "@/components/global/home/MarqueeSection";
 import Link from "next/link";
 import { ChevronRight, BookOpen, Star, ShieldCheck, Heart } from "lucide-react";
 
@@ -37,6 +38,7 @@ export default async function Home({ params }) {
   return (
     <main className="min-h-screen">
       <HeroSection />
+      <MarqueeSection />
       <PillarsOfIslam />
       <AboutStatsSection />
       <TestimonialsSection />
