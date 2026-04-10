@@ -40,7 +40,7 @@ export default async function RootLayout({ children, params }) {
       dir={dir}
       className={`${outfit.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body>
+      <body suppressHydrationWarning>
         <AppProvider>
           <ServicesProvider>
             <HeaderProvider>
