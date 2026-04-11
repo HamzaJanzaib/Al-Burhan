@@ -2,6 +2,7 @@
 import { motion } from "motion/react";
 import { BookOpen, Users, Globe, Award, Star, Heart } from "lucide-react";
 import Link from "next/link";
+import { useLocalePath } from "@/hooks/useLocalePath";
 import AboutStatsSection from "@/components/global/home/opportunitiesSec";
 import HeroSection from "@/components/global/home/AboutHero";
 import LearningNewsSection from "@/components/global/home/LearningNews";
@@ -30,6 +31,7 @@ const values = [
 ];
 
 export default function AboutPage() {
+  const localePath = useLocalePath();
   return (
     <div className="min-h-screen bg-background overflow-hidden">
       <HeroSection />
@@ -85,7 +87,7 @@ export default function AboutPage() {
             love and precision.
           </p>
           <Link
-            href="/enroll"
+            href={localePath("/enroll")}
             className="inline-flex items-center gap-2 px-10 py-5 rounded-full bg-secondary text-primary font-black text-lg shadow-2xl hover:scale-105 active:scale-95 transition-all"
           >
             Enroll Now <span>→</span>

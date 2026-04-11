@@ -12,6 +12,7 @@ import {
 } from "motion/react";
 import { CheckCircle, Award, Sparkles, GraduationCap } from "lucide-react";
 import Link from "next/link";
+import { useLocalePath } from "@/hooks/useLocalePath";
 
 const Counter = ({ value, suffix = "%" }) => {
   const ref = useRef(null);
@@ -42,6 +43,7 @@ const Counter = ({ value, suffix = "%" }) => {
 
 const AboutStatsSection = () => {
   const containerRef = useRef(null);
+  const localePath = useLocalePath();
 
   // Parallax Effect for Images
   const { scrollYProgress } = useScroll({
@@ -222,7 +224,7 @@ const AboutStatsSection = () => {
             variants={itemVariants}
             className="relative pt-10"
           >
-            <Link href="/enroll">
+            <Link href={localePath("/enroll")}>
               <motion.div
                 whileHover={{ scale: 0.98, rotate: -1 }}
                 className="relative aspect-video rounded-[32px] overflow-hidden shadow-2xl border border-slate-100 group"

@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Plus, ArrowRight, Calendar, BookOpen, Bell } from "lucide-react";
 import Link from "next/link";
+import { useLocalePath } from "@/hooks/useLocalePath";
 
 const quranNews = [
   {
@@ -38,6 +39,7 @@ const quranNews = [
 
 export default function LearningNewsSection() {
   const [hoveredId, setHoveredId] = useState(1);
+  const localePath = useLocalePath();
 
   return (
     <section className="bg-primary/5 py-24 px-6 md:px-20 font-sans selection:bg-secondary/30 overflow-hidden relative">
@@ -64,7 +66,7 @@ export default function LearningNewsSection() {
             </h2>
           </motion.div>
 
-          <Link href="/enroll">
+          <Link href={localePath("/enroll")}>
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -135,7 +137,7 @@ export default function LearningNewsSection() {
                           animate={{ opacity: 1, x: 0 }}
                           exit={{ opacity: 0, x: 10 }}
                         >
-                          <Link href={item.href}>
+                          <Link href={localePath(item.href)}>
                             <div className="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center hover:bg-primary/90 shadow-lg shadow-primary/30 transition-all">
                               <ArrowRight size={20} />
                             </div>

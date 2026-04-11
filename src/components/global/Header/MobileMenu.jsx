@@ -16,6 +16,7 @@ import { useHeader } from "@/context/HeaderContext";
 import { useTranslation } from "react-i18next";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { useServices } from "@/context/ServicesContext";
+import { useLocalePath } from "@/hooks/useLocalePath";
 
 const MobileMenu = () => {
   const { t, i18n } = useTranslation();
@@ -30,6 +31,7 @@ const MobileMenu = () => {
     getFirstLetter,
   } = useHeader();
   const { gridServices } = useServices();
+  const localePath = useLocalePath();
 
   const isRTL = i18n.dir() === "rtl";
 
@@ -45,20 +47,20 @@ const MobileMenu = () => {
   };
 
   const navItems = [
-    { name: t("nav.home"), href: "/" },
-    { name: t("nav.about"), href: "/about" },
+    { name: t("nav.home"), href: localePath("/") },
+    { name: t("nav.about"), href: localePath("/about") },
     {
       name: t("nav.services"),
-      href: "/service",
+      href: localePath("/service"),
       subItems: gridServices.map((service) => ({
         name: service.title,
-        href: service.href,
+        href: localePath(service.href),
         icon: service.icon,
       })),
     },
     {
       name: t("nav.contact"),
-      href: "/contact",
+      href: localePath("/contact"),
       icon: <Mail size={18} />,
     },
   ];
@@ -131,7 +133,7 @@ const MobileMenu = () => {
               <div className="h-1.5 bg-linear-to-r from-primary via-secondary to-primary/80"></div>
 
               <div className="flex items-center justify-between px-6 py-5 border-b border-gray-100 bg-background/50">
-                <Link href="/" onClick={() => setMobileMenuOpen(false)}>
+                <Link href={localePath("/")} onClick={() => setMobileMenuOpen(false)}>
                   <div className="flex items-center gap-3">
                     <div className="bg-primary/5 p-1 rounded-full border border-primary/10 shadow-sm">
                       <Image
@@ -289,7 +291,7 @@ const MobileMenu = () => {
                         </div>
                         <div className="grid grid-cols-2 gap-2.5 relative z-10">
                           <Link
-                            href="/profile"
+                            href={localePath("/profile")}
                             onClick={() => setMobileMenuOpen(false)}
                           >
                             <button className="w-full py-2.5 rounded-xl bg-background border border-gray-200 text-gray-700 font-semibold text-xs hover:border-primary hover:text-primary transition-colors flex items-center justify-center gap-1.5 shadow-sm active:scale-95">
@@ -297,7 +299,7 @@ const MobileMenu = () => {
                             </button>
                           </Link>
                           <Link
-                            href="/book"
+                            href={localePath("/book")}
                             onClick={() => setMobileMenuOpen(false)}
                           >
                             <button className="w-full py-2.5 rounded-xl bg-primary text-white font-semibold text-xs shadow-md hover:bg-primary/90 transition-colors flex items-center justify-center gap-1.5 active:scale-95">
@@ -324,7 +326,7 @@ const MobileMenu = () => {
                           whileTap={{ scale: 0.97 }}
                         >
                           <Link
-                            href="/enroll"
+                            href={localePath("/enroll")}
                             onClick={() => setMobileMenuOpen(false)}
                             className="relative group bg-linear-to-r from-primary via-primary/90 to-primary text-white px-6 py-4 rounded-2xl font-bold shadow-xl shadow-primary/20 transition-all flex items-center justify-between text-base overflow-hidden"
                           >

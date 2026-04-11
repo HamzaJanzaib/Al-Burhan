@@ -10,9 +10,10 @@ import {
   BookOpen,
   GraduationCap,
 } from "lucide-react";
-import Link from "next/link";
+import { useLocalePath } from "@/hooks/useLocalePath";
 
 const HeroSection = () => {
+  const localePath = useLocalePath();
   // Animation Variants
   const fadeInUp = {
     hidden: { opacity: 0, y: 30 },
@@ -77,7 +78,7 @@ const HeroSection = () => {
             variants={fadeInUp}
             className="flex flex-wrap items-center gap-6"
           >
-            <Link href="/enroll">
+            <Link href={localePath("/enroll")}>
               <button className="bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-full font-medium flex items-center gap-2 transition-all shadow-lg shadow-primary/20 group cursor-pointer">
                 Get Started
                 <ArrowUpRight
@@ -87,7 +88,7 @@ const HeroSection = () => {
               </button>
             </Link>
 
-            <Link href="/service">
+            <Link href={localePath("/service")}>
               <button className="flex items-center gap-2 text-slate-700 font-semibold hover:text-primary transition-colors cursor-pointer">
                 <BookOpen size={24} className="text-secondary" />
                 View Courses

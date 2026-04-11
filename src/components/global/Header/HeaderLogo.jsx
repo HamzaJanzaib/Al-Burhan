@@ -1,11 +1,13 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
+import { useLocalePath } from "@/hooks/useLocalePath";
 
 const HeaderLogo = () => {
+  const localePath = useLocalePath();
   return (
     <div className="flex-1 select-none flex justify-start cursor-pointer">
-      <Link href="/" className="flex items-center space-x-[.5rem]">
+      <Link href={localePath("/")} className="flex items-center space-x-[.5rem]">
         <div className="relative flex items-center gap-1">
           <div className="relative w-12 md:w-16 h-12 md:h-16 shrink-0">
             <Image
@@ -32,3 +34,4 @@ const HeaderLogo = () => {
 };
 
 export default HeaderLogo;
+

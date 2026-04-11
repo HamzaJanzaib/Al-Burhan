@@ -3,6 +3,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import { motion, useScroll, useTransform, AnimatePresence } from "motion/react";
 import Link from "next/link";
+import { useLocalePath } from "@/hooks/useLocalePath";
 
 const slides = [
   {
@@ -38,6 +39,7 @@ const slides = [
 ];
 
 export default function InspirationSection() {
+  const localePath = useLocalePath();
   const containerRef = useRef(null);
 
   // Parallax effect for the background image
@@ -130,7 +132,7 @@ export default function InspirationSection() {
           </AnimatePresence>
 
           <div className="flex items-center gap-6">
-            <Link href="/courses">
+            <Link href={localePath("/courses")}>
               <button className="cursor-pointer bg-secondary hover:bg-secondary/90 text-secondary-foreground font-bold py-4 px-8 rounded-full shadow-[0_0_20px_rgba(204,255,0,0.2)] hover:shadow-[0_0_30px_rgba(204,255,0,0.5)] transition-all duration-300 transform hover:-translate-y-1">
                 Discover Courses
               </button>

@@ -6,6 +6,7 @@ import { useHeader } from "@/context/HeaderContext";
 import { useTranslation } from "react-i18next";
 import { useEffect } from "react";
 import { ChevronRight, Sparkles } from "lucide-react";
+import { useLocalePath } from "@/hooks/useLocalePath";
 
 const AuthButtons = () => {
   const { t } = useTranslation();
@@ -19,6 +20,7 @@ const AuthButtons = () => {
     shakeControls,
     rippleControls,
   } = useHeader();
+  const localePath = useLocalePath();
 
   useEffect(() => {
     let isMounted = true;
@@ -67,7 +69,7 @@ const AuthButtons = () => {
             whileTap={{ scale: 0.95 }}
           >
             <Link
-              href="/enroll"
+              href={localePath("/enroll")}
               className="relative group flex items-center gap-2 px-6 py-2.5 rounded-full font-bold text-sm text-primary-foreground overflow-hidden shadow-lg shadow-primary/20 transition-shadow hover:shadow-primary/40 cursor-pointer"
             >
               {/* Gradient background */}
@@ -87,7 +89,7 @@ const AuthButtons = () => {
       ) : (
         <div className="flex items-center gap-4">
           {/* Book Now button (logged in) */}
-          <Link href="/book">
+          <Link href={localePath("/book")}>
             <motion.div className="relative inline-block">
               {[0, 1, 2].map((i) => (
                 <motion.span
@@ -182,7 +184,7 @@ const AuthButtons = () => {
 
                   <div className="py-1.5 px-1.5 space-y-0.5">
                     <Link
-                      href="/profile"
+                      href={localePath("/profile")}
                       className="flex items-center gap-3 px-4 py-2.5 text-sm font-medium text-gray-700 hover:bg-primary/5 hover:text-primary rounded-xl transition-colors cursor-pointer"
                     >
                       <User size={15} className="text-primary/60" />

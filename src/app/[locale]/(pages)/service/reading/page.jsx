@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { useLocalePath } from "@/hooks/useLocalePath";
 
 const steps = [
   {
@@ -46,6 +47,7 @@ const steps = [
 ];
 
 export default function ReadingPage() {
+  const localePath = useLocalePath();
   return (
     <div className="min-h-screen bg-background overflow-hidden pb-20">
       {/* Hero */}
@@ -93,7 +95,7 @@ export default function ReadingPage() {
             transition={{ delay: 0.2 }}
           >
             <Link
-              href="/enroll?course=Quran Reading (Nazra)"
+              href={localePath("/enroll?course=Quran Reading (Nazra)")}
               className="px-10 py-4 rounded-full bg-primary text-white font-bold shadow-xl hover:scale-105 active:scale-95 transition-all"
             >
               Book Trial Class
@@ -169,7 +171,7 @@ export default function ReadingPage() {
                 recitation through patient, professional tutoring.{" "}
               </p>
               <Link
-                href="/enroll"
+                href={localePath("/enroll")}
                 className="inline-flex items-center gap-2 font-black text-primary hover:text-secondary transition-colors group"
               >
                 {" "}

@@ -5,8 +5,10 @@ import { motion } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { useLocalePath } from "@/hooks/useLocalePath";
 
 export default function AboutAcademy() {
+  const localePath = useLocalePath();
   const fadeInUp = {
     hidden: { opacity: 0, y: 30 },
     visible: { 
@@ -94,13 +96,14 @@ export default function AboutAcademy() {
           </motion.p>
 
           <motion.div variants={fadeInUp}>
-            <Link href="/about">
+            <Link href={localePath("/about")}>
               <button className="bg-secondary text-primary font-bold uppercase tracking-widest py-4 px-10 rounded-sm flex items-center gap-3 group hover:bg-secondary/90 hover:shadow-[0_10px_20px_rgba(204,255,0,0.15)] transition-all duration-300 transform hover:-translate-y-1">
                 READ MORE
                 <ArrowRight size={20} className="group-hover:translate-x-1.5 transition-transform duration-300" />
               </button>
             </Link>
           </motion.div>
+
 
         </motion.div>
 

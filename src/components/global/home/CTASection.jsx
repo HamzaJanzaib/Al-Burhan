@@ -4,8 +4,10 @@ import React from "react";
 import { motion, AnimatePresence } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
+import { useLocalePath } from "@/hooks/useLocalePath";
 
 export default function CTASection() {
+  const localePath = useLocalePath();
   
   // Custom offset staggered animations for the avatars
   const avatarVariants = {
@@ -99,7 +101,7 @@ export default function CTASection() {
               transition={{ duration: 0.6, delay: 0.4, ease: "easeOut", type: "spring" }}
               className="pt-6"
             >
-              <Link href="/join">
+              <Link href={localePath("/join")}>
                 <button className="relative overflow-hidden cursor-pointer group bg-secondary text-primary-foreground font-black tracking-wide text-base md:text-lg py-5 px-12 rounded-full transition-transform duration-300 hover:scale-105 active:scale-95">
                   <span className="relative z-10 transition-colors duration-300">Join Our Community</span>
                   

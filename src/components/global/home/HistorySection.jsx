@@ -5,8 +5,10 @@ import { motion, useScroll, useTransform } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
 import { BookOpen } from "lucide-react";
+import { useLocalePath } from "@/hooks/useLocalePath";
 
 export default function HistorySection() {
+  const localePath = useLocalePath();
   const fadeInUp = {
     hidden: { opacity: 0, y: 30 },
     visible: { 
@@ -125,7 +127,7 @@ export default function HistorySection() {
             </ul>
 
             <motion.div variants={fadeInUp} className="pt-6">
-              <Link href="/history">
+              <Link href={localePath("/history")}>
                 {/* 
                   The Dynamic Shine Button
                   Explicit cursor-pointer rule added.

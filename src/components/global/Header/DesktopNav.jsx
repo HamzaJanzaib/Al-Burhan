@@ -7,31 +7,33 @@ import { ChevronDown, ChevronRight, Mail, Sparkles } from "lucide-react";
 import { useHeader } from "@/context/HeaderContext";
 import { useTranslation } from "react-i18next";
 import { useServices } from "@/context/ServicesContext";
+import { useLocalePath } from "@/hooks/useLocalePath";
 
 const DesktopNav = () => {
   const { t, i18n } = useTranslation();
   const { activeDropdown, setActiveDropdown } = useHeader();
   const { gridServices } = useServices();
   const [hoveredIndex, setHoveredIndex] = useState(null);
+  const localePath = useLocalePath();
 
   const isRTL = i18n.dir() === "rtl";
 
   const navItems = [
-    { name: t("nav.home"), href: "/" },
-    { name: t("nav.about"), href: "/about" },
+    { name: t("nav.home"), href: localePath("/") },
+    { name: t("nav.about"), href: localePath("/about") },
     {
       name: t("nav.services"),
-      href: "/service",
+      href: localePath("/service"),
       subItems: gridServices.map((service) => ({
         name: service.title,
-        href: service.href,
+        href: localePath(service.href),
         icon: service.icon,
         description: service.description,
       })),
     },
     {
       name: t("nav.contact"),
-      href: "/contact",
+      href: localePath("/contact"),
       icon: <Mail size={18} />,
     },
   ];
@@ -142,7 +144,7 @@ const DesktopNav = () => {
                           Start your spiritual journey today
                         </span>
                         <Link
-                          href="/enroll"
+                          href={localePath("/enroll")}
                           className="text-xs font-bold text-primary hover:underline flex items-center gap-1"
                         >
                           Enroll Now <ChevronRight size={12} />

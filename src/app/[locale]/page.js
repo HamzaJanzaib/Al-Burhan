@@ -1,4 +1,5 @@
 import { getServerTranslation } from "@/i18n/server";
+import { languages } from "@/i18n/setting";
 import HeroSection from "@/components/global/home/AboutHero";
 import TestimonialsSection from "@/components/global/home/testimonial";
 import AboutStatsSection from "@/components/global/home/opportunitiesSec";
@@ -13,6 +14,10 @@ import PrayerTimes from "@/components/global/home/PrayerTimes";
 import InspirationSection from "@/components/global/home/InspirationSection";
 import Link from "next/link";
 import { ChevronRight, BookOpen, Star, ShieldCheck, Heart } from "lucide-react";
+
+export async function generateStaticParams() {
+  return languages.map((locale) => ({ locale }));
+}
 
 export default async function Home({ params }) {
   const { locale } = await params;

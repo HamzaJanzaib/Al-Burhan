@@ -12,9 +12,11 @@ import {
   FaTiktok,
 } from "react-icons/fa6";
 import { useFooter } from "@/context/FooterContext";
+import { useLocalePath } from "@/hooks/useLocalePath";
 
 const FooterBrand = () => {
   const { t, socials } = useFooter();
+  const localePath = useLocalePath();
 
   const getIcon = (name) => {
     switch (name) {
@@ -40,7 +42,7 @@ const FooterBrand = () => {
   return (
     <div className="text-left">
       <Link
-        href="/"
+        href={localePath("/")}
         className="inline-block mb-3 group relative cursor-pointer"
       >
         <div className="relative flex items-center justify-center">

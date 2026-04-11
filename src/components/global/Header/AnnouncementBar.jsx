@@ -7,10 +7,12 @@ import {
   useAnimationFrame,
 } from "motion/react";
 import { useTranslation } from "react-i18next";
+import { useLocalePath } from "@/hooks/useLocalePath";
 
 const AnnouncementBar = () => {
   const { t } = useTranslation();
   const [hoveredIndex, setHoveredIndex] = useState(null);
+  const localePath = useLocalePath();
   const containerRef = useRef(null);
   const isHovered = useRef(false);
 
@@ -33,7 +35,7 @@ const AnnouncementBar = () => {
         <>
           {t("announcement_quran")} —{" "}
           <a
-            href="/enroll"
+            href={localePath("/enroll")}
             className="font-bold pl-1 underline text-secondary transition cursor-pointer"
           >
             {t("enroll_now")}
@@ -46,7 +48,7 @@ const AnnouncementBar = () => {
         <>
           {t("announcement_trial")}{" "}
           <a
-            href="/enroll"
+            href={localePath("/enroll")}
             className="font-bold underline pl-1 text-secondary transition cursor-pointer"
           >
             {t("claim_offer")}
@@ -59,7 +61,7 @@ const AnnouncementBar = () => {
         <>
           {t("announcement_certified")} —{" "}
           <a
-            href="/enroll"
+            href={localePath("/enroll")}
             className="font-bold underline pl-1 text-secondary transition cursor-pointer"
           >
             {t("enroll_now")}
